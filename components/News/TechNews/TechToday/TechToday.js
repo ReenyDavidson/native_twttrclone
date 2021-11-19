@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { StyleSheet, Text, View, FlatList } from "react-native";
 import TechnologyTodayList from "../TechToday/index";
+import TechTodayDetail from "../../../NewsDetail/TechDetail/TechTodayDetail";
 
 const TechnologyToday = () => {
   const [data, setData] = useState([]);

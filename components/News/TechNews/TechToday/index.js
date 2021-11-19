@@ -11,7 +11,7 @@ const TechnologyTodayList = ({ item }) => {
     <Pressable
       style={styles.container}
       onPress={() => {
-        navigation.navigate("TechTodayDetailScreen");
+        navigation.navigate("TechTodayDetailScreen", item);
       }}
     >
       <View style={styles.titleContainer}>
@@ -21,7 +21,6 @@ const TechnologyTodayList = ({ item }) => {
           <Text style={styles.date}>{moment(item.publishedAt).fromNow()}</Text>
         </View>
       </View>
-
       <NewsHeaderImage image={item.urlToImage} height={80} width={130} borderRadius={5} />
     </Pressable>
   );
