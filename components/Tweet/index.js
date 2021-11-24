@@ -6,7 +6,7 @@ import RightContainer from "./RightContainer";
 const Tweet = ({ tweet }) => {
   return (
     <View style={styles.container}>
-      <LeftContainer user={tweet.user} />
+      <LeftContainer tweet={tweet} />
       <RightContainer tweet={tweet} />
     </View>
   );
@@ -16,11 +16,12 @@ export default Tweet;
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: "row",
+    flexDirection: "column",
     width: "100%",
     padding: 15,
     borderBottomWidth: 0.15,
     borderBottomColor: "#282C35",
-    backgroundColor: "#000",
+    backgroundColor: "#000133",
+    paddingVertical: 25,
   },
 });

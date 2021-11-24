@@ -9,6 +9,7 @@ import Navigation from "./navigation";
 
 export default function App() {
   let [fontsLoaded] = useFonts({
+    Quicksand: require("./assets/fonts/Quicksand/static/Quicksand-Regular.ttf"),
     QuicksandBold: require("./assets/fonts/Quicksand/static/Quicksand-Bold.ttf"),
     QuicksandMedium: require("./assets/fonts/Quicksand/static/Quicksand-Medium.ttf"),
     QuicksandSemiBold: require("./assets/fonts/Quicksand/static/Quicksand-SemiBold.ttf"),
@@ -31,7 +32,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
   },
