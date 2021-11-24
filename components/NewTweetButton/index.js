@@ -11,7 +11,7 @@ const NewTweetButton = () => {
   };
   return (
     <Pressable style={styles.button}>
-      <AntDesign name={"plus"} size={25} color={"#FFFF"} onPress={onPress} />
+      <AntDesign name={"plus"} size={25} color={"#0C0C1C"} onPress={onPress} />
     </Pressable>
   );
 };
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     bottom: 20,
     right: 20,
-    backgroundColor: "#1DA1F2",
+    backgroundColor: "#11DDAA",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",

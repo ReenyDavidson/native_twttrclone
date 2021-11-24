@@ -47,7 +47,7 @@ export default function Tabs() {
         tabBarStyle: {
           elevation: 0,
           borderTopWidth: 0.2,
-          backgroundColor: "#000",
+          backgroundColor: "#0C0C1C",
           borderTopColor: "#282C35",
         },
         headerShown: true,
@@ -55,7 +55,7 @@ export default function Tabs() {
           elevation: 0,
           borderBottomWidth: 0.2,
           borderBottomColor: "#282C35",
-          backgroundColor: "#000",
+          backgroundColor: "#0C0C1C",
         },
         tabBarShowLabel: false,
       })}

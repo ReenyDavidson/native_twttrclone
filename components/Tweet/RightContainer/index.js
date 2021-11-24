@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
   Maincontainer: {
     marginLeft: 14,
     flex: 1,
-    backgroundColor: "#000133",
+    backgroundColor: "#0C0C1C",
   },
   contentContainer: {
     fontSize: 16,
