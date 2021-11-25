@@ -24,6 +24,7 @@ export default function App() {
     return (
       <SafeAreaProvider>
         <SignUp />
+
         <StatusBar barStyle={"light-content"} animated={true} backgroundColor={"#000"} />
       </SafeAreaProvider>
     );
