@@ -8,27 +8,27 @@ import NewsHeaderImage from "../NewsHeaderImage/index";
 const NewsHeader = () => {
   const navigation = useNavigation();
   return (
-    <ScrollView style={styles.container} stickyHeaderIndices={[0]}>
+    <ScrollView style={styles.container}>
       <ImageBackground
+        resizeMode="cover"
+        resizeMethod="resize"
         source={{
           uri: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=707&q=80",
         }}
         style={{
-          width: 410,
-          height: 150,
-
-          borderBottomColor: "grey",
+          flex: 1,
+          justifyContent: "center",
+          width: "100%",
+          height: 200,
         }}
       >
-        <View style={{}}>
-          <Text style={styles.stickyHeaderText}>Topics for you.</Text>
-        </View>
+        <Text style={styles.stickyHeaderText}>Topics for you</Text>
       </ImageBackground>
 
       <Pressable style={styles.eachHeader} onPress={() => navigation.navigate("CryptoNewsScreen")}>
         <View style={styles.header}>
           <Text style={styles.headerText}>Cryptocurrency</Text>
-          <Ionicons name={"logo-bitcoin"} size={10} color={"#FFF"} />
+          <Ionicons name={"logo-bitcoin"} size={10} color={"#fff"} />
         </View>
         <NewsHeaderImage
           image={
@@ -184,21 +184,20 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: "100%",
-    backgroundColor: "#000",
+    backgroundColor: "#001",
   },
-  stickyHeaderText: { color: "#fff", fontSize: 25, top: 100, fontFamily: "QuicksandBold" },
+  stickyHeaderText: { color: "#fff", fontSize: 25, top: 30, fontFamily: "QuicksandBold" },
   eachHeader: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    borderBottomWidth: 0.2,
-    borderBottomColor: "#282C35",
-    padding: 10,
+    paddingVertical: 15,
+    backgroundColor: "#0C0C1C",
   },
   headerText: {
-    fontSize: 16,
+    fontSize: 17,
     fontFamily: "QuicksandSemiBold",
-    paddingRight: 2,
+    padding: 15,
     color: "#FFF",
   },
   header: {

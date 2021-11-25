@@ -56,6 +56,7 @@ export default function Tabs() {
         },
         headerShown: true,
         headerStyle: {
+          height: 70,
           elevation: 0,
           borderBottomWidth: 0.2,
           borderBottomColor: "#282C35",
@@ -93,8 +94,7 @@ export default function Tabs() {
         options={{
           tabBarLabel: "News",
           headerTitle: () => <SearchBar />,
-          headerTitleAlign: "center",
-          headerLeft: () => (
+          headerRight: () => (
             <ImageUri
               image={
                 "https://www.washingtonpost.com/resizer/PWa0TPTXiZtSD3v-fDE8OXp0eUA=/1484x0/arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/4WH6CDER5II6PB2U2R4GRDJDWQ.png"
@@ -103,8 +103,7 @@ export default function Tabs() {
             />
           ),
           headerLeftContainerStyle: { marginLeft: 15 },
-          headerRight: () => <Ionicons name={"settings-outline"} size={23} color={"#FFF"} />,
-          headerRightContainerStyle: { marginRight: 15 },
+          headerRightContainerStyle: { paddingRight: 15 },
         }}
       />
       <Tab.Screen
