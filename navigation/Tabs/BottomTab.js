@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Image, View } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons, MaterialCommunityIcons } from "react-native-vector-icons/";
 
@@ -22,11 +23,11 @@ export default function Tabs() {
           if (route.name === "TabOneScreen") {
             iconName = focused ? "home" : "home-outline";
           } else if (route.name === "TabTwoScreen") {
-            iconName = focused ? "search" : "search-outline";
+            iconName = focused ? "md-newspaper" : "md-newspaper-outline";
           } else if (route.name === "TabThreeScreen") {
-            iconName = focused ? "notifications" : "notifications-outline";
+            iconName = focused ? "chatbubble-ellipses" : "chatbubble-ellipses-outline";
           } else if (route.name === "TabFourScreen") {
-            iconName = focused ? "mail" : "mail-outline";
+            iconName = focused ? "notifications" : "notifications-outline";
           }
 
           if (route.name === "TabOneScreen") {
@@ -42,13 +43,16 @@ export default function Tabs() {
           // You can return any component that you like here!
           return <Ionicons name={iconName} size={size} color={color} />;
         },
-        tabBarActiveTintColor: "#FFF",
+        tabBarActiveTintColor: "#11DDAA",
         tabBarInactiveTintColor: "#FFF",
         tabBarStyle: {
           elevation: 0,
           borderTopWidth: 0.2,
           backgroundColor: "#0C0C1C",
           borderTopColor: "#282C35",
+          paddingTop: 10,
+          paddingBottom: 10,
+          height: 60,
         },
         headerShown: true,
         headerStyle: {
@@ -57,34 +61,37 @@ export default function Tabs() {
           borderBottomColor: "#282C35",
           backgroundColor: "#0C0C1C",
         },
-        tabBarShowLabel: false,
+        tabBarShowLabel: true,
+        tabBarLabelStyle: { fontFamily: "QuicksandSemiBold", fontSize: 12 },
       })}
     >
       <Tab.Screen
         name="TabOneScreen"
         component={TabOneScreen}
         options={{
-          headerTitle: () => <Ionicons name={"logo-twitter"} size={26} color={"#1DA1F2"} />,
-          headerTitleAlign: "center",
-          headerLeft: () => (
+          tabBarLabel: "Home",
+          headerTitle: () => (
+            <View style={{ width: 100, flexDirection: "row", justifyContent: "center" }}>
+              <Image
+                source={require("../../assets/images/broxnbg.png")}
+                style={{ width: 50, height: 30 }}
+              />
+            </View>
+          ),
+          headerRight: () => (
             <ImageUri
-              image={
-                "https://www.washingtonpost.com/resizer/PWa0TPTXiZtSD3v-fDE8OXp0eUA=/1484x0/arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/4WH6CDER5II6PB2U2R4GRDJDWQ.png"
-              }
-              size={25}
+              size={30}
+              image={"https://i.pinimg.com/736x/3f/97/3a/3f973a4cb980751c809b682042ca3aff.jpg"}
             />
           ),
-          headerLeftContainerStyle: { marginLeft: 15 },
-          headerRight: () => (
-            <MaterialCommunityIcons name={"star-four-points-outline"} size={23} color={"#fff"} />
-          ),
-          headerRightContainerStyle: { marginRight: 15 },
+          headerRightContainerStyle: { paddingHorizontal: 15 },
         }}
       />
       <Tab.Screen
         name="TabTwoScreen"
         component={TabTwoScreen}
         options={{
+          tabBarLabel: "News",
           headerTitle: () => <SearchBar />,
           headerTitleAlign: "center",
           headerLeft: () => (
@@ -100,8 +107,20 @@ export default function Tabs() {
           headerRightContainerStyle: { marginRight: 15 },
         }}
       />
-      <Tab.Screen name="TabThreeScreen" component={TabThreeScreen} />
-      <Tab.Screen name="TabFourScreen" component={TabFourScreen} />
+      <Tab.Screen
+        name="TabThreeScreen"
+        component={TabThreeScreen}
+        options={{ tabBarLabel: "Chat" }}
+      />
+      <Tab.Screen
+        name="TabFourScreen"
+        component={TabFourScreen}
+        options={{
+          tabBarLabel: "Notifications",
+          tabBarBadge: 2,
+          tabBarBadgeStyle: { backgroundColor: "#11DDAA", fontFamily: "QuicksandMedium" },
+        }}
+      />
     </Tab.Navigator>
   );
 }

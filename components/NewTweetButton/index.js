@@ -21,13 +21,13 @@ export default NewTweetButton;
 const styles = StyleSheet.create({
   button: {
     position: "absolute",
-    bottom: 20,
+    bottom: 25,
     right: 20,
     backgroundColor: "#11DDAA",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    borderRadius: 50,
+    borderRadius: 15,
     height: 55,
     width: 55,
     shadowColor: "rgba(0, 0, 0, 0.1)",

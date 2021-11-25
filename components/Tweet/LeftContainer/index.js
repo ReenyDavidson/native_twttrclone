@@ -1,20 +1,18 @@
 import React from "react";
 import { StyleSheet, View, Text } from "react-native";
 import ImageUri from "../../ProfilePicture/index";
-import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import moment from "moment";
 
 const LeftContainer = ({ tweet }) => {
   return (
     <View style={styles.Headercontainer}>
-      <ImageUri image={tweet.user.image} size={55} />
+      <ImageUri image={tweet.user.image} size={55} radius={10} />
       <View
         style={{
           flexDirection: "row",
           marginVertical: 5,
           marginHorizontal: 14,
           justifyContent: "space-between",
-
           width: "80%",
         }}
       >

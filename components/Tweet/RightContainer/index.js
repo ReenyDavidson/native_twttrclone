@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     letterSpacing: 0.5,
     lineHeight: 25,
     paddingBottom: 20,
-    fontFamily: "Quicksand",
+    fontFamily: "QuicksandSemiBold",
     color: "#fff",
   },
   contentImage: {
