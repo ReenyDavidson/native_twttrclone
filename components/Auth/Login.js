@@ -90,6 +90,7 @@ const styles = StyleSheet.create({
     padding: 10,
     fontSize: 18,
     fontFamily: "QuicksandBold",
+    color: "#fff",
   },
   password: {
     width: "80%",

@@ -37,12 +37,26 @@ const SignUp = () => {
           placeholderTextColor="grey"
           returnKeyType="go"
           secureTextEntry
+          passwordRules="minLength:6"
+          textContentType="password"
+          keyboardType="default"
+          autoCorrect={false}
+        />
+        <TextInput
+          style={styles.password}
+          defaultValue={password}
+          onchangeText={handlePasswordChange}
+          placeholder="Confirm Password"
+          placeholderTextColor="grey"
+          returnKeyType="go"
+          secureTextEntry
+          passwordRules="minLength:6"
           textContentType="password"
           keyboardType="default"
           autoCorrect={false}
         />
         <Pressable style={styles.registerContainer}>
-          <Text style={styles.register}>Sign In?</Text>
+          <Text style={styles.register}>want to sign in?</Text>
         </Pressable>
         <Pressable style={styles.button}>
           <Text style={{ fontFamily: "QuicksandBold", fontSize: 20 }}>SIGN UP</Text>
@@ -69,14 +83,14 @@ const styles = StyleSheet.create({
     width: "80%",
     height: 50,
     marginBottom: 40,
-    top: -100,
+    top: -20,
   },
   form: {
     width: "100%",
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
-    top: -70,
+    top: -40,
   },
   email: {
     width: "80%",
@@ -87,13 +101,14 @@ const styles = StyleSheet.create({
     padding: 10,
     fontSize: 18,
     fontFamily: "QuicksandBold",
+    color: "#fff",
   },
   password: {
     width: "80%",
     height: 60,
     backgroundColor: "#0ff1",
     borderRadius: 5,
-    marginBottom: 10,
+    marginBottom: 35,
     padding: 10,
     fontSize: 18,
     fontFamily: "QuicksandBold",
@@ -106,7 +121,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     justifyContent: "center",
     alignItems: "center",
-    top: 50,
+    top: 30,
     padding: 10,
   },
   register: {
@@ -116,7 +131,7 @@ const styles = StyleSheet.create({
   },
   registerContainer: {
     width: "80%",
-
+    top: -30,
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "flex-end",
