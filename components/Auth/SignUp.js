@@ -42,7 +42,7 @@ const SignUp = () => {
           autoCorrect={false}
         />
         <Pressable style={styles.registerContainer}>
-          <Text style={styles.register}>Login?</Text>
+          <Text style={styles.register}>Sign In?</Text>
         </Pressable>
         <Pressable style={styles.button}>
           <Text style={{ fontFamily: "QuicksandBold", fontSize: 20 }}>SIGN UP</Text>

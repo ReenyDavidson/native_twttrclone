@@ -5,8 +5,8 @@ import AppLoading from "expo-app-loading";
 import { useFonts } from "expo-font";
 
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import Navigation from "./navigation";
-import SignUp from "./components/Auth/SignUp";
+//import Navigation from "./navigation";
+import Login from "./components/Auth/Login";
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -23,7 +23,7 @@ export default function App() {
   } else {
     return (
       <SafeAreaProvider>
-        <SignUp />
+        <Login />
         {/* <Navigation/> */}
         <StatusBar barStyle={"light-content"} animated={true} backgroundColor={"#000"} />
       </SafeAreaProvider>

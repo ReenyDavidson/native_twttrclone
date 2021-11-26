@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Pressable, StyleSheet, Text, TextInput, View } from "react-native";
+import { Image, Pressable, StyleSheet, Text, TextInput, View } from "react-native";
 
 const SignUp = () => {
   const [email, setEmail] = useState("");
@@ -16,7 +16,11 @@ const SignUp = () => {
   return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>
-        <Text style={{ fontSize: 40, fontFamily: "QuicksandBold", color: "#fff" }}>Login</Text>
+        <Text style={{ fontSize: 40, fontFamily: "QuicksandBold", color: "#fff" }}>Sign In</Text>
+        <Image
+          source={require("../../assets/images/broxnbg.png")}
+          style={{ height: 30, width: 50, top: 7 }}
+        />
       </View>
       <View style={styles.form}>
         <TextInput
@@ -40,10 +44,10 @@ const SignUp = () => {
           autoCorrect={false}
         />
         <Pressable style={styles.registerContainer}>
-          <Text style={styles.register}>Sign up?</Text>
+          <Text style={styles.register}>Forgot Password?</Text>
         </Pressable>
         <Pressable style={styles.button}>
-          <Text style={{ fontFamily: "QuicksandBold", fontSize: 20 }}>SIGN UP</Text>
+          <Text style={{ fontFamily: "QuicksandBold", fontSize: 20 }}>SIGN IN</Text>
         </Pressable>
       </View>
     </View>
@@ -62,6 +66,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#0C0C1C",
   },
   headerContainer: {
+    flexDirection: "row",
     alignItems: "flex-start",
     justifyContent: "center",
     width: "80%",
