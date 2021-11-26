@@ -16,7 +16,7 @@ const SignUp = () => {
   return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>
-        <Text style={{ fontSize: 40, fontFamily: "QuicksandBold", color: "#fff" }}>Sign In</Text>
+        <Text style={{ fontSize: 40, fontFamily: "QuicksandBold", color: "#fff" }}>Sign in</Text>
         <Image
           source={require("../../assets/images/broxnbg.png")}
           style={{ height: 30, width: 50, top: 7 }}
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
     width: "80%",
     height: 50,
     marginBottom: 40,
-    top: -100,
+    top: -70,
   },
   form: {
     width: "100%",
