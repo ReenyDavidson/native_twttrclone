@@ -6,6 +6,7 @@ import { supabase } from "../../services/supabase/supabase";
 const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
 
   const handleSignUp = async (email) => {
     await supabase.auth.signUp({ email, password });
@@ -19,10 +20,18 @@ const SignUp = () => {
     setPassword(text);
   };
 
+  const handleConfirmPasswordChange = (text) => {
+    setConfirmPassword(text);
+  };
+
   const handleSignUpPress = (e) => {
     e.preventDefault();
-    await supabase.from("users").insert({ email, password });
-    handleSignUp(email);
+    if (password !== confirmPassword) {
+      throw new Error("Passwords do not match");
+    } else {
+      await supabase.from("users").insert({ email, password });
+      handleSignUp(email);
+    }
   };
 
   return (
@@ -56,8 +65,8 @@ const SignUp = () => {
         />
         <TextInput
           style={styles.password}
-          defaultValue={password}
-          onchangeText={handlePasswordChange}
+          defaultValue={confirmPassword}
+          onchangeText={handleConfirmPasswordChange}
           placeholder="Confirm Password"
           placeholderTextColor="grey"
           returnKeyType="go"
