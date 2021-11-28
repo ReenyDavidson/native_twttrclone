@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Image, Pressable, StyleSheet, Text, TextInput, View } from "react-native";
 
-const SignUp = () => {
+const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -54,7 +54,7 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default Login;
 
 const styles = StyleSheet.create({
   container: {

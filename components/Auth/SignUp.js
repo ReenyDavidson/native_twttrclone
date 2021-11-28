@@ -1,9 +1,15 @@
 import React, { useState } from "react";
 import { Pressable, StyleSheet, Text, TextInput, View } from "react-native";
 
+import { supabase } from "../../services/supabase/supabase";
+
 const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const handleSignUp = async (email) => {
+    await supabase.auth.signUp({ email, password });
+  };
 
   const handleEmailChange = (text) => {
     setEmail(text);
@@ -11,6 +17,12 @@ const SignUp = () => {
 
   const handlePasswordChange = (text) => {
     setPassword(text);
+  };
+
+  const handleSignUpPress = (e) => {
+    e.preventDefault();
+    await supabase.from("users").insert({ email, password });
+    handleSignUp(email);
   };
 
   return (
@@ -58,7 +70,7 @@ const SignUp = () => {
         <Pressable style={styles.registerContainer}>
           <Text style={styles.register}>want to sign in?</Text>
         </Pressable>
-        <Pressable style={styles.button}>
+        <Pressable style={styles.button} onPress={handleSignUpPress}>
           <Text style={{ fontFamily: "QuicksandBold", fontSize: 20 }}>SIGN UP</Text>
         </Pressable>
       </View>
