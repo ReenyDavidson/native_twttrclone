@@ -41,7 +41,7 @@ const Login = () => {
         <TextInput
           style={styles.password}
           defaultValue={password}
-          onchangeText={handlePasswordChange}
+          onChangeText={handlePasswordChange}
           placeholder="Enter Password"
           placeholderTextColor="grey"
           returnKeyType="go"

@@ -47,12 +47,11 @@ const SignUp = () => {
         <TextInput
           style={styles.password}
           defaultValue={password}
-          onchangeText={handlePasswordChange}
+          onChangeText={handlePasswordChange}
           placeholder="Enter Password"
           placeholderTextColor="grey"
           returnKeyType="go"
-          secureTextEntry
-          passwordRules="minLength:6"
+          secureTextEntry={true}
           textContentType="password"
           keyboardType="default"
           autoCorrect={false}
@@ -60,12 +59,11 @@ const SignUp = () => {
         <TextInput
           style={styles.password}
           defaultValue={confirmPassword}
-          onchangeText={handleConfirmPasswordChange}
+          onChangeText={handleConfirmPasswordChange}
           placeholder="Confirm Password"
           placeholderTextColor="grey"
           returnKeyType="go"
-          secureTextEntry
-          passwordRules="minLength:6"
+          secureTextEntry={true}
           textContentType="password"
           keyboardType="default"
           autoCorrect={false}

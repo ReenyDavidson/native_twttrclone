@@ -22,7 +22,7 @@ export const handleSignUp = async (email, password) => {
     .auth()
     .createUserWithEmailAndPassword(email, password)
     .then(() => {
-      console.log(auth.currentUser);
+      console.log(firebase.auth().currentUser);
     })
     .catch((error) => {
       console.error(error);
@@ -30,6 +30,13 @@ export const handleSignUp = async (email, password) => {
 };
 
 export const handleSignIn = async (email, password) => {
-  const user = await signInWithEmailAndPassword(auth, email, password);
-  return user;
+  await firebase
+    .auth()
+    .signInWithEmailAndPassword(email, password)
+    .then(() => {
+      console.log(firebase.auth().currentUser);
+    })
+    .catch((error) => {
+      console.error(error);
+    });
 };
