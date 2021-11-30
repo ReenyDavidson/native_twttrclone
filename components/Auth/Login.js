@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Image, Pressable, StyleSheet, Text, TextInput, View } from "react-native";
 
+import { handleSignIn } from "../../services/firebase/firebaseConfig";
+
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -11,6 +13,11 @@ const Login = () => {
 
   const handlePasswordChange = (text) => {
     setPassword(text);
+  };
+
+  const handleSignInClick = () => {
+    handleSignIn(email, password);
+    console.log("Login successful");
   };
 
   return (
@@ -43,10 +50,10 @@ const Login = () => {
           keyboardType="default"
           autoCorrect={false}
         />
-        <Pressable style={styles.registerContainer}>
-          <Text style={styles.register}>Forgot Password?</Text>
+        <Pressable style={styles.forgotContainer}>
+          <Text style={styles.forgot}>Forgot Password?</Text>
         </Pressable>
-        <Pressable style={styles.button}>
+        <Pressable style={styles.button} onPress={handleSignInClick}>
           <Text style={{ fontFamily: "QuicksandBold", fontSize: 20 }}>SIGN IN</Text>
         </Pressable>
       </View>
@@ -113,12 +120,12 @@ const styles = StyleSheet.create({
     top: 50,
     padding: 10,
   },
-  register: {
+  forgot: {
     fontFamily: "QuicksandBold",
     color: "#fff",
     fontSize: 18,
   },
-  registerContainer: {
+  forgotContainer: {
     width: "80%",
 
     flexDirection: "row",

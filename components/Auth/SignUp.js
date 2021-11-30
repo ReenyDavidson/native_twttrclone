@@ -1,16 +1,12 @@
 import React, { useState } from "react";
 import { Pressable, StyleSheet, Text, TextInput, View } from "react-native";
 
-import { supabase } from "../../services/supabase/supabase";
+import { handleSignUp } from "../../services/firebase/firebaseConfig";
 
 const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-
-  const handleSignUp = async (email) => {
-    await supabase.auth.signUp({ email, password });
-  };
 
   const handleEmailChange = (text) => {
     setEmail(text);
@@ -24,13 +20,11 @@ const SignUp = () => {
     setConfirmPassword(text);
   };
 
-  const handleSignUpPress = (e) => {
-    e.preventDefault();
-    if (password !== confirmPassword) {
-      throw new Error("Passwords do not match");
+  const handleSignUpPress = () => {
+    if (email == "" && password !== confirmPassword && password == "" && confirmPassword == "") {
+      console.error("Invalid Credentials");
     } else {
-      await supabase.from("users").insert({ email, password });
-      handleSignUp(email);
+      handleSignUp(email, password);
     }
   };
 
