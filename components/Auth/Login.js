@@ -26,7 +26,7 @@ const Login = () => {
         <Text style={{ fontSize: 40, fontFamily: "QuicksandBold", color: "#fff" }}>Sign in</Text>
         <Image
           source={require("../../assets/images/broxnbg.png")}
-          style={{ height: 30, width: 50, top: 7 }}
+          style={{ height: 30, width: 50, top: 9 }}
         />
       </View>
       <View style={styles.form}>
@@ -74,8 +74,6 @@ const styles = StyleSheet.create({
   },
   headerContainer: {
     flexDirection: "row",
-    alignItems: "flex-start",
-    justifyContent: "center",
     width: "80%",
     height: 50,
     marginBottom: 40,

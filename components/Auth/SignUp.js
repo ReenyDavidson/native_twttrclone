@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Pressable, StyleSheet, Text, TextInput, View } from "react-native";
+import { Pressable, StyleSheet, Text, TextInput, Image, View } from "react-native";
 
 import { handleSignUp } from "../../services/firebase/firebaseConfig";
 
@@ -31,9 +31,12 @@ const SignUp = () => {
   return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>
-        <Text style={{ fontSize: 40, fontFamily: "QuicksandBold", color: "#fff" }}>
-          Create an account
-        </Text>
+        <Text style={{ fontSize: 40, fontFamily: "QuicksandBold", color: "#fff" }}>Create</Text>
+        <Image
+          source={require("../../assets/images/broxnbg.png")}
+          style={{ height: 30, width: 50, top: 9, marginRight: 5 }}
+        />
+        <Text style={{ fontSize: 40, fontFamily: "QuicksandBold", color: "#fff" }}>account</Text>
       </View>
       <View style={styles.form}>
         <TextInput
@@ -91,8 +94,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#0C0C1C",
   },
   headerContainer: {
-    alignItems: "flex-start",
-    justifyContent: "center",
+    flexDirection: "row",
     width: "80%",
     height: 50,
     marginBottom: 40,
