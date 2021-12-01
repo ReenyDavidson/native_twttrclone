@@ -23,10 +23,18 @@ const Login = () => {
   return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>
-        <Text style={{ fontSize: 40, fontFamily: "QuicksandBold", color: "#fff" }}>Sign in</Text>
+        <Text
+          style={{
+            fontSize: 40,
+            fontFamily: "QuicksandBold",
+            color: "#fff",
+          }}
+        >
+          Sign in
+        </Text>
         <Image
           source={require("../../assets/images/broxnbg.png")}
-          style={{ height: 30, width: 50, top: 9 }}
+          style={{ height: 30, width: 50, top: 9, transform: [{ rotate: "-10deg" }] }}
         />
       </View>
       <View style={styles.form}>
@@ -118,6 +126,7 @@ const styles = StyleSheet.create({
     top: 50,
     padding: 10,
   },
+
   forgot: {
     fontFamily: "QuicksandBold",
     color: "#fff",
@@ -125,7 +134,6 @@ const styles = StyleSheet.create({
   },
   forgotContainer: {
     width: "80%",
-
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "flex-end",

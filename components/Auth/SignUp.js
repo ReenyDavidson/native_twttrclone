@@ -34,7 +34,13 @@ const SignUp = () => {
         <Text style={{ fontSize: 40, fontFamily: "QuicksandBold", color: "#fff" }}>Create</Text>
         <Image
           source={require("../../assets/images/broxnbg.png")}
-          style={{ height: 30, width: 50, top: 9, marginRight: 5 }}
+          style={{
+            height: 30,
+            width: 50,
+            top: 9,
+            marginRight: 5,
+            transform: [{ rotate: "-10deg" }],
+          }}
         />
         <Text style={{ fontSize: 40, fontFamily: "QuicksandBold", color: "#fff" }}>account</Text>
       </View>
