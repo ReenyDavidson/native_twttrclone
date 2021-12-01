@@ -16,6 +16,8 @@ import SportsNewsScreen from "../screens/NewsScreens/SportsNewsScreen";
 import TechnologyNewsScreen from "../screens/NewsScreens/TechnologyNewsScreen";
 import TravelNewsScreen from "../screens/NewsScreens/TravelNewsScreen";
 import TechTodayDetailScreen from "../screens/NewsDetailsScreens/TechTodayDetailScreen";
+import SignUpScreen from "../screens/AuthScreens/SignUpScreen";
+import SignInScreen from "../screens/AuthScreens/SignInScreen";
 
 export default function Navigation() {
   return (
@@ -26,6 +28,51 @@ export default function Navigation() {
 }
 
 const Stack = createStackNavigator();
+
+function RootAuthNavigator() {
+  const config = {
+    animation: "spring",
+    config: {
+      stiffness: 1000,
+      damping: 500,
+      mass: 3,
+      overshootClamping: true,
+      restDisplacementThreshold: 0.01,
+      restSpeedThreshold: 0.01,
+    },
+  };
+  return (
+    <Stack.Navigator
+      initialRouteName="SignIn"
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <Stack.Screen
+        name="SignInScreen"
+        component={SignInScreen}
+        options={{
+          headerShown: false,
+          transitionSpec: {
+            open: config,
+            close: config,
+          },
+        }}
+      />
+      <Stack.Screen
+        name="SignUpScreen"
+        component={SignUpScreen}
+        options={{
+          headerShown: false,
+          transitionSpec: {
+            open: config,
+            close: config,
+          },
+        }}
+      />
+    </Stack.Navigator>
+  );
+}
 
 function RootNavigator() {
   const config = {
@@ -201,6 +248,32 @@ function RootNavigator() {
           headerTitleStyle: { fontFamily: "QuicksandBold", color: "#fff" },
           headerShown: true,
           headerStyle: { elevation: 0, backgroundColor: "#000" },
+          transitionSpec: {
+            open: config,
+            close: config,
+          },
+        }}
+      />
+      <Stack.Screen
+        name="SignUpScreen"
+        component={SignUpScreen}
+        options={{
+          title: "Sign Up",
+          headerTitleStyle: { fontFamily: "QuicksandBold", color: "#fff" },
+          headerShown: true,
+          transitionSpec: {
+            open: config,
+            close: config,
+          },
+        }}
+      />
+      <Stack.Screen
+        name="SignInScreen"
+        component={SignInScreen}
+        options={{
+          title: "Sign In",
+          headerTitleStyle: { fontFamily: "QuicksandBold", color: "#fff" },
+          headerShown: true,
           transitionSpec: {
             open: config,
             close: config,

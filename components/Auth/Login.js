@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/core";
 import React, { useState } from "react";
 import { Image, Pressable, StyleSheet, Text, TextInput, View } from "react-native";
 
@@ -6,6 +7,8 @@ import { handleSignIn } from "../../services/firebase/firebaseConfig";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const navigation = useNavigation();
 
   const handleEmailChange = (text) => {
     setEmail(text);
@@ -63,6 +66,28 @@ const Login = () => {
         </Pressable>
         <Pressable style={styles.button} onPress={handleSignInClick}>
           <Text style={{ fontFamily: "QuicksandBold", fontSize: 20 }}>SIGN IN</Text>
+        </Pressable>
+        <Pressable
+          style={{
+            alignItems: "center",
+            justifyContent: "center",
+            top: "80%",
+            height: 30,
+          }}
+          onPress={() => navigation.navigate("SignUpScreen")}
+        >
+          <Text
+            style={{
+              alignItems: "center",
+              justifyContent: "center",
+              fontFamily: "QuicksandBold",
+
+              fontSize: 16,
+              color: "white",
+            }}
+          >
+            Don't have an account? Register
+          </Text>
         </Pressable>
       </View>
     </View>

@@ -23,6 +23,12 @@ export const handleSignUp = async (email, password) => {
     .createUserWithEmailAndPassword(email, password)
     .then(() => {
       console.log(firebase.auth().currentUser);
+      const user = firebase.auth().currentUser;
+      firebase.firestore().collection("users").add({
+        uid: user.uid,
+        email: user.email,
+        authProvider: "local",
+      });
     })
     .catch((error) => {
       console.error(error);

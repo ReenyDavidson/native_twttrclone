@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Pressable, StyleSheet, Text, TextInput, Image, View } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 import { handleSignUp } from "../../services/firebase/firebaseConfig";
 
@@ -7,6 +8,8 @@ const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+
+  const navigation = useNavigation();
 
   const handleEmailChange = (text) => {
     setEmail(text);
@@ -77,7 +80,10 @@ const SignUp = () => {
           keyboardType="default"
           autoCorrect={false}
         />
-        <Pressable style={styles.registerContainer}>
+        <Pressable
+          style={styles.registerContainer}
+          onPress={() => navigation.navigate("SignInScreen")}
+        >
           <Text style={styles.register}>want to sign in?</Text>
         </Pressable>
         <Pressable style={styles.button} onPress={handleSignUpPress}>
@@ -107,14 +113,14 @@ const styles = StyleSheet.create({
     top: -20,
   },
   form: {
-    width: "100%",
+    width: "80%",
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
     top: -40,
   },
   email: {
-    width: "80%",
+    width: "100%",
     height: 60,
     backgroundColor: "#0ff1",
     borderRadius: 5,
@@ -125,7 +131,7 @@ const styles = StyleSheet.create({
     color: "#fff",
   },
   password: {
-    width: "80%",
+    width: "100%",
     height: 60,
     backgroundColor: "#0ff1",
     borderRadius: 5,
@@ -136,7 +142,7 @@ const styles = StyleSheet.create({
     color: "#fff",
   },
   button: {
-    width: "80%",
+    width: "100%",
     height: 50,
     backgroundColor: "#1da",
     borderRadius: 5,
@@ -151,10 +157,8 @@ const styles = StyleSheet.create({
     fontSize: 18,
   },
   registerContainer: {
-    width: "80%",
     top: -30,
     flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "flex-end",
+    alignSelf: "flex-end",
   },
 });

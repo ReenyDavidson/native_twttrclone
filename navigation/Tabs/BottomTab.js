@@ -116,8 +116,8 @@ export default function Tabs() {
         component={TabFourScreen}
         options={{
           tabBarLabel: "Notifications",
-          tabBarBadge: 2,
-          tabBarBadgeStyle: { backgroundColor: "#11DDAA", fontFamily: "QuicksandMedium" },
+          tabBarBadge: 7,
+          tabBarBadgeStyle: { backgroundColor: "#11DDAA", fontFamily: "QuicksandBold" },
         }}
       />
     </Tab.Navigator>

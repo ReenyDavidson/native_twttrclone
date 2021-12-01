@@ -1,5 +1,21 @@
 const Tweets = [
   {
+    id: "0",
+    user: {
+      id: "t0",
+      username: "Reeny",
+      name: "Reeny Davidson",
+      image: "https://i.pinimg.com/originals/4a/32/24/4a322435365e763bac42157153d59cc3.png",
+    },
+    createdAt: "2021-12-01T19:00:00.000Z",
+    content:
+      "Archaic season 2 out now on Netflix. Enjoy that one fellas  #Netflix #ArchaicSeason2 ",
+    image: "https://i.pinimg.com/736x/17/02/98/170298386b7010432c641b3476923c3b.jpg",
+    numberOfComments: 899,
+    numberOfRetweets: 700,
+    numberOfLikes: 1800,
+  },
+  {
     id: "1",
     user: {
       id: "t1",

@@ -30,6 +30,7 @@ const styles = StyleSheet.create({
     paddingBottom: 20,
     fontFamily: "QuicksandSemiBold",
     color: "#fff",
+    height: "auto",
   },
   contentImage: {
     width: "95%",
