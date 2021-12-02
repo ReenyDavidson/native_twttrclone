@@ -5,8 +5,15 @@ import { Ionicons } from "react-native-vector-icons/";
 const Footer = ({ tweet }) => {
   const [click, setclick] = useState({ name: "heart-outline", color: "#86FF" });
   const onClick = () => {
-    setclick({ name: "heart", color: "#86FF17" });
+    if (click.name === "heart-outline") {
+      setclick({ name: "heart", color: "#66FF00" });
+      tweet.numberOfLikes += 1;
+    } else if (click.name === "heart") {
+      setclick({ name: "heart-outline", color: "#86FF" });
+      tweet.numberOfLikes -= 1;
+    }
   };
+
   return (
     <View style={styles.footerContainer}>
       <View style={styles.IconContainer}>
