@@ -2,7 +2,7 @@ import React from "react";
 import { View, StyleSheet, TextInput } from "react-native";
 
 const SearchBar = () => {
-  return <TextInput style={styles.Input} placeholder="Search News" placeholderTextColor={"#fff"} />;
+  return <TextInput style={styles.Input} placeholder="Search News" placeholderTextColor={"grey"} />;
 };
 
 export default SearchBar;
@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     width: 270,
     fontSize: 17,
-    fontFamily: "QuicksandMedium",
+    fontFamily: "QuicksandSemiBold",
     paddingHorizontal: 15,
   },
 });

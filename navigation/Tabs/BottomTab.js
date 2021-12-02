@@ -75,7 +75,7 @@ export default function Tabs() {
             <View style={{ width: 100, flexDirection: "row", justifyContent: "center" }}>
               <Image
                 source={require("../../assets/images/broxnbg.png")}
-                style={{ width: 50, height: 30 }}
+                style={{ width: 50, height: 30, transform: [{ rotate: "-10deg" }] }}
               />
             </View>
           ),
@@ -96,10 +96,8 @@ export default function Tabs() {
           headerTitle: () => <SearchBar />,
           headerRight: () => (
             <ImageUri
-              image={
-                "https://www.washingtonpost.com/resizer/PWa0TPTXiZtSD3v-fDE8OXp0eUA=/1484x0/arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/4WH6CDER5II6PB2U2R4GRDJDWQ.png"
-              }
-              size={25}
+              image={"https://i.pinimg.com/736x/3f/97/3a/3f973a4cb980751c809b682042ca3aff.jpg"}
+              size={30}
             />
           ),
           headerLeftContainerStyle: { marginLeft: 15 },
