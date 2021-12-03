@@ -22,7 +22,7 @@ import SignInScreen from "../screens/AuthScreens/SignInScreen";
 export default function Navigation() {
   return (
     <NavigationContainer>
-      <RootNavigator />
+      <RootAuthNavigator />
     </NavigationContainer>
   );
 }
