@@ -2,6 +2,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
 
 import * as React from "react";
+import firebase from "firebase";
 
 import NewTweetScreen from "../screens/NewTweetScreen";
 import Tabs from "./Tabs/BottomTab";
@@ -20,9 +21,19 @@ import SignUpScreen from "../screens/AuthScreens/SignUpScreen";
 import SignInScreen from "../screens/AuthScreens/SignInScreen";
 
 export default function Navigation() {
+  React.useEffect(() => {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        console.log("user signed in");
+      } else {
+        console.log("user signed out");
+      }
+    });
+  }, []);
+
   return (
     <NavigationContainer>
-      <RootAuthNavigator />
+      {firebase.auth().currentUser ? <RootNavigator /> : <RootAuthNavigator />}
     </NavigationContainer>
   );
 }

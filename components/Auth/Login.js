@@ -18,8 +18,8 @@ const Login = () => {
     setPassword(text);
   };
 
-  const handleSignInClick = () => {
-    handleSignIn(email, password);
+  const handleSignInClick = async () => {
+    await handleSignIn(email, password);
     console.log("Login successful");
   };
 

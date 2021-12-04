@@ -23,11 +23,16 @@ const SignUp = () => {
     setConfirmPassword(text);
   };
 
-  const handleSignUpPress = () => {
+  const handleSignUpPress = async () => {
     if (email == "" && password !== confirmPassword && password == "" && confirmPassword == "") {
       console.error("Invalid Credentials");
     } else {
-      handleSignUp(email, password);
+      try {
+        await handleSignUp(email, password);
+        navigation.navigate("SignInScreen");
+      } catch (error) {
+        console.error(error);
+      }
     }
   };
 
