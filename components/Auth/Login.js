@@ -1,14 +1,32 @@
 import { useNavigation } from "@react-navigation/core";
 import React, { useState } from "react";
 import { Image, Pressable, StyleSheet, Text, TextInput, View } from "react-native";
-
 import { handleSignIn } from "../../services/firebase/firebaseConfig";
+import { Ionicons } from "@expo/vector-icons";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const [visible, setVisibility] = React.useState({ name: "eye-off" });
+
   const navigation = useNavigation();
+
+  const ToggleVisibilty = () => {
+    if (visible.name === "eye") {
+      setVisibility({ name: "eye-off" });
+    } else {
+      setVisibility({ name: "eye" });
+    }
+  };
+
+  const secureTextEntry = () => {
+    if (visible.name === "eye") {
+      return false;
+    } else if (visible.name === "eye-off") {
+      return true;
+    }
+  };
 
   const handleEmailChange = (text) => {
     setEmail(text);
@@ -48,19 +66,29 @@ const Login = () => {
           textContentType="emailAddress"
           placeholder="Email Address"
           placeholderTextColor="grey"
+          returnKeyType="next"
         />
-        <TextInput
-          style={styles.password}
-          defaultValue={password}
-          onChangeText={handlePasswordChange}
-          placeholder="Enter Password"
-          placeholderTextColor="grey"
-          returnKeyType="go"
-          secureTextEntry
-          textContentType="password"
-          keyboardType="default"
-          autoCorrect={false}
-        />
+        <View style={styles.passwordContainer}>
+          <TextInput
+            style={styles.password}
+            defaultValue={password}
+            onChangeText={handlePasswordChange}
+            placeholder="Enter Password"
+            placeholderTextColor="grey"
+            returnKeyType="go"
+            secureTextEntry={secureTextEntry()}
+            textContentType="password"
+            keyboardType="default"
+            autoCorrect={false}
+          />
+          <Ionicons
+            name={visible.name}
+            size={24}
+            color="#1da"
+            style={styles.eyeContainer}
+            onPress={ToggleVisibilty}
+          />
+        </View>
         <Pressable style={styles.forgotContainer}>
           <Text style={styles.forgot}>Forgot Password?</Text>
         </Pressable>
@@ -71,7 +99,7 @@ const Login = () => {
           style={{
             alignItems: "center",
             justifyContent: "center",
-            top: "80%",
+            top: "50%",
             height: 30,
           }}
           onPress={() => navigation.navigate("SignUpScreen")}
@@ -81,7 +109,6 @@ const Login = () => {
               alignItems: "center",
               justifyContent: "center",
               fontFamily: "QuicksandBold",
-
               fontSize: 16,
               color: "white",
             }}
@@ -110,17 +137,17 @@ const styles = StyleSheet.create({
     width: "80%",
     height: 50,
     marginBottom: 40,
-    top: -70,
+    top: -20,
   },
   form: {
-    width: "100%",
+    width: "80%",
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
-    top: -70,
+    top: -40,
   },
   email: {
-    width: "80%",
+    width: "100%",
     height: 60,
     backgroundColor: "#0ff1",
     borderRadius: 5,
@@ -131,24 +158,38 @@ const styles = StyleSheet.create({
     color: "#fff",
   },
   password: {
-    width: "80%",
+    width: "85%",
     height: 60,
-    backgroundColor: "#0ff1",
     borderRadius: 5,
-    marginBottom: 10,
+    marginBottom: 35,
     padding: 10,
     fontSize: 18,
     fontFamily: "QuicksandBold",
     color: "#fff",
   },
+
+  passwordContainer: {
+    flexDirection: "row",
+    width: "100%",
+    height: 60,
+    backgroundColor: "#0ff1",
+    borderRadius: 5,
+    marginBottom: 35,
+  },
+  eyeContainer: {
+    position: "absolute",
+    right: 10,
+    top: 20,
+  },
+
   button: {
-    width: "80%",
+    width: "100%",
     height: 50,
     backgroundColor: "#1da",
     borderRadius: 5,
     justifyContent: "center",
     alignItems: "center",
-    top: 50,
+    top: 30,
     padding: 10,
   },
 
@@ -157,10 +198,10 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontSize: 18,
   },
+
   forgotContainer: {
-    width: "80%",
+    top: -20,
     flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "flex-end",
+    alignSelf: "flex-end",
   },
 });

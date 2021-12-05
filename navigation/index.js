@@ -20,27 +20,35 @@ import TechTodayDetailScreen from "../screens/NewsDetailsScreens/TechTodayDetail
 import SignUpScreen from "../screens/AuthScreens/SignUpScreen";
 import SignInScreen from "../screens/AuthScreens/SignInScreen";
 
+import { Text, LogBox } from "react-native";
+
+LogBox.ignoreAllLogs(true);
+
 export default function Navigation() {
+  const [isLoading, setIsLoading] = React.useState(true);
+  const [user, setUser] = React.useState();
+
   React.useEffect(() => {
     firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
-        console.log("user signed in");
-      } else {
-        console.log("user signed out");
-      }
+      setUser(user);
+      setIsLoading(false);
     });
   }, []);
 
+  if (isLoading) {
+    return null;
+  }
+  const User = firebase.auth().currentUser;
   return (
     <NavigationContainer>
-      {firebase.auth().currentUser ? <RootNavigator /> : <RootAuthNavigator />}
+      {User ? <Text>Hello {firebase.auth().currentUser.email}</Text> : <AuthStack />}
     </NavigationContainer>
   );
 }
 
 const Stack = createStackNavigator();
 
-function RootAuthNavigator() {
+function AuthStack() {
   const config = {
     animation: "spring",
     config: {
@@ -85,7 +93,7 @@ function RootAuthNavigator() {
   );
 }
 
-function RootNavigator() {
+function TabStack() {
   const config = {
     animation: "spring",
     config: {

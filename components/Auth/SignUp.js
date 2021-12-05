@@ -1,15 +1,33 @@
 import React, { useState } from "react";
 import { Pressable, StyleSheet, Text, TextInput, Image, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-
 import { handleSignUp } from "../../services/firebase/firebaseConfig";
+import { Ionicons } from "@expo/vector-icons";
 
 const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
+  const [visible, setVisibility] = React.useState({ name: "eye-off" });
+
   const navigation = useNavigation();
+
+  const ToggleVisibilty = () => {
+    if (visible.name === "eye") {
+      setVisibility({ name: "eye-off" });
+    } else {
+      setVisibility({ name: "eye" });
+    }
+  };
+
+  const secureTextEntry = () => {
+    if (visible.name === "eye") {
+      return false;
+    } else if (visible.name === "eye-off") {
+      return true;
+    }
+  };
 
   const handleEmailChange = (text) => {
     setEmail(text);
@@ -29,7 +47,6 @@ const SignUp = () => {
     } else {
       try {
         await handleSignUp(email, password);
-        navigation.navigate("SignInScreen");
       } catch (error) {
         console.error(error);
       }
@@ -60,31 +77,44 @@ const SignUp = () => {
           textContentType="emailAddress"
           placeholder="Email Address"
           placeholderTextColor="grey"
+          keyboardType="email-address"
+          returnKeyType="next"
         />
-        <TextInput
-          style={styles.password}
-          defaultValue={password}
-          onChangeText={handlePasswordChange}
-          placeholder="Enter Password"
-          placeholderTextColor="grey"
-          returnKeyType="go"
-          secureTextEntry={true}
-          textContentType="password"
-          keyboardType="default"
-          autoCorrect={false}
-        />
-        <TextInput
-          style={styles.password}
-          defaultValue={confirmPassword}
-          onChangeText={handleConfirmPasswordChange}
-          placeholder="Confirm Password"
-          placeholderTextColor="grey"
-          returnKeyType="go"
-          secureTextEntry={true}
-          textContentType="password"
-          keyboardType="default"
-          autoCorrect={false}
-        />
+        <View style={styles.passwordContainer}>
+          <TextInput
+            style={styles.password}
+            defaultValue={password}
+            onChangeText={handlePasswordChange}
+            placeholder="Enter Password"
+            placeholderTextColor="grey"
+            returnKeyType="next"
+            secureTextEntry={secureTextEntry()}
+            textContentType="password"
+            keyboardType="default"
+            autoCorrect={false}
+          />
+          <Ionicons
+            name={visible.name}
+            size={24}
+            color="#1da"
+            style={styles.eyeContainer}
+            onPress={ToggleVisibilty}
+          />
+        </View>
+        <View style={styles.passwordContainer}>
+          <TextInput
+            style={styles.password}
+            defaultValue={confirmPassword}
+            onChangeText={handleConfirmPasswordChange}
+            placeholder="Confirm Password"
+            placeholderTextColor="grey"
+            returnKeyType="go"
+            secureTextEntry={secureTextEntry()}
+            textContentType="password"
+            keyboardType="default"
+            autoCorrect={false}
+          />
+        </View>
         <Pressable
           style={styles.registerContainer}
           onPress={() => navigation.navigate("SignInScreen")}
@@ -136,9 +166,8 @@ const styles = StyleSheet.create({
     color: "#fff",
   },
   password: {
-    width: "100%",
+    width: "85%",
     height: 60,
-    backgroundColor: "#0ff1",
     borderRadius: 5,
     marginBottom: 35,
     padding: 10,
@@ -146,6 +175,21 @@ const styles = StyleSheet.create({
     fontFamily: "QuicksandBold",
     color: "#fff",
   },
+
+  passwordContainer: {
+    flexDirection: "row",
+    width: "100%",
+    height: 60,
+    backgroundColor: "#0ff1",
+    borderRadius: 5,
+    marginBottom: 35,
+  },
+  eyeContainer: {
+    position: "absolute",
+    right: 10,
+    top: 20,
+  },
+
   button: {
     width: "100%",
     height: 50,
@@ -156,13 +200,14 @@ const styles = StyleSheet.create({
     top: 30,
     padding: 10,
   },
+
   register: {
     fontFamily: "QuicksandBold",
     color: "#fff",
     fontSize: 18,
   },
   registerContainer: {
-    top: -30,
+    top: -20,
     flexDirection: "row",
     alignSelf: "flex-end",
   },

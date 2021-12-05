@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Image, View } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Ionicons, MaterialCommunityIcons } from "react-native-vector-icons/";
+import { Ionicons } from "react-native-vector-icons/";
 
 import TabOneScreen from "../../screens/TabsScreens/TabOneScreen";
 import TabTwoScreen from "../../screens/TabsScreens/TabTwoScreen";
