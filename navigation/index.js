@@ -21,6 +21,7 @@ import SignUpScreen from "../screens/AuthScreens/SignUpScreen";
 import SignInScreen from "../screens/AuthScreens/SignInScreen";
 
 import { Text, LogBox } from "react-native";
+import OnboardingScreen from "../screens/AuthScreens/OnboardingScreen";
 
 LogBox.ignoreAllLogs(true);
 
@@ -39,14 +40,18 @@ export default function Navigation() {
     return null;
   }
   const User = firebase.auth().currentUser;
-  return <NavigationContainer>{User ? <Text>Hello {User.email}</Text> : <AuthStack />}</NavigationContainer>;
+  return (
+    <NavigationContainer>
+      {User ? <Text>Hello {User.email}</Text> : <AuthStack />}
+    </NavigationContainer>
+  );
 }
 
 const Stack = createStackNavigator();
 
 function AuthStack() {
   const config = {
-    animation: "spring",
+    animation: "timing",
     config: {
       stiffness: 1000,
       damping: 500,
@@ -77,6 +82,17 @@ function AuthStack() {
       <Stack.Screen
         name="SignUpScreen"
         component={SignUpScreen}
+        options={{
+          headerShown: false,
+          transitionSpec: {
+            open: config,
+            close: config,
+          },
+        }}
+      />
+      <Stack.Screen
+        name="OnboardingScreen"
+        component={OnboardingScreen}
         options={{
           headerShown: false,
           transitionSpec: {
