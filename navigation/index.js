@@ -51,7 +51,7 @@ const Stack = createStackNavigator();
 
 function AuthStack() {
   const config = {
-    animation: "timing",
+    animation: "spring",
     config: {
       stiffness: 1000,
       damping: 500,
@@ -63,11 +63,22 @@ function AuthStack() {
   };
   return (
     <Stack.Navigator
-      initialRouteName="SignIn"
+      initialRouteName="OnboardingScreen"
       screenOptions={{
         headerShown: false,
       }}
     >
+      <Stack.Screen
+        name="OnboardingScreen"
+        component={OnboardingScreen}
+        options={{
+          headerShown: false,
+          transitionSpec: {
+            open: config,
+            close: config,
+          },
+        }}
+      />
       <Stack.Screen
         name="SignInScreen"
         component={SignInScreen}
@@ -82,17 +93,6 @@ function AuthStack() {
       <Stack.Screen
         name="SignUpScreen"
         component={SignUpScreen}
-        options={{
-          headerShown: false,
-          transitionSpec: {
-            open: config,
-            close: config,
-          },
-        }}
-      />
-      <Stack.Screen
-        name="OnboardingScreen"
-        component={OnboardingScreen}
         options={{
           headerShown: false,
           transitionSpec: {
