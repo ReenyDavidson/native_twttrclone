@@ -1,7 +1,5 @@
 import React from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
-import ImageUri from "../../ProfilePicture/index";
-
 import { FlatList } from "react-native-gesture-handler";
 
 export default function Onboardingdata() {
@@ -26,6 +24,7 @@ export default function Onboardingdata() {
   return (
     <FlatList
       data={onboardingdata}
+      centerContent={true}
       horizontal={true}
       showsHorizontalScrollIndicator={false}
       renderItem={({ item }) => (
