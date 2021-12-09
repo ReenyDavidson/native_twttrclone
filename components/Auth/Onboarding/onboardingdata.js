@@ -1,6 +1,7 @@
 import React from "react";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { ActivityIndicatorBase, Image, StyleSheet, Text, View } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
+import { back } from "react-native/Libraries/Animated/src/Easing";
 
 export default function Onboardingdata() {
   const onboardingdata = [

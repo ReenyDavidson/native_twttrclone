@@ -3,11 +3,10 @@ import { View, StyleSheet } from "react-native";
 import LeftContainer from "./LeftContainer";
 import RightContainer from "./RightContainer";
 
-const Tweet = ({ tweet }) => {
+const Tweet = ({ data }) => {
   return (
     <View style={styles.container}>
-      <LeftContainer tweet={tweet} />
-      <RightContainer tweet={tweet} />
+      <RightContainer data={data} />
     </View>
   );
 };

@@ -3,14 +3,13 @@ import { Text, View, Image, StyleSheet } from "react-native";
 
 import Footer from "../../Footer";
 
-const RightContainer = ({ tweet }) => {
+const RightContainer = ({ data }) => {
   return (
     <View style={styles.Maincontainer}>
       <View>
-        <Text style={styles.contentContainer}>{tweet.content}</Text>
-        {!!tweet.image && <Image source={{ uri: tweet.image }} style={styles.contentImage} />}
+        <Text style={styles.contentContainer}>{data.text}</Text>
+        {!!data.image && <Image source={{ uri: data.image }} style={styles.contentImage} />}
       </View>
-      <Footer tweet={tweet} />
     </View>
   );
 };

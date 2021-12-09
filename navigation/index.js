@@ -40,11 +40,7 @@ export default function Navigation() {
     return null;
   }
   const User = firebase.auth().currentUser;
-  return (
-    <NavigationContainer>
-      {User ? <Text>Hello {User.email}</Text> : <AuthStack />}
-    </NavigationContainer>
-  );
+  return <NavigationContainer>{User ? <TabStack /> : <AuthStack />}</NavigationContainer>;
 }
 
 const Stack = createStackNavigator();

@@ -1,4 +1,5 @@
-const Tweets = [
+{
+  /*const Tweets = [
   {
     id: "0",
     user: {
@@ -101,4 +102,5 @@ const Tweets = [
   },
 ];
 
-export default Tweets;
+export default Tweets*/
+}
