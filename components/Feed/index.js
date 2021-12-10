@@ -28,6 +28,7 @@ const Feed = () => {
       <FlatList
         data={data}
         renderItem={({ item }) => <Tweet data={item} />}
+        z
         keyExtractor={(item) => item.id}
       />
     </View>
