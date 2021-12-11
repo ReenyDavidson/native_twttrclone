@@ -20,7 +20,7 @@ const OnboardingFooter = () => {
             fontFamily: "QuicksandBold",
           }}
         >
-          LOGIN
+          SIGN IN
         </Text>
       </Pressable>
       <Pressable
