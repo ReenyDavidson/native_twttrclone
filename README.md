@@ -9,4 +9,3 @@ also tweeting from a dummy account.
 2. React Navigation
 3. NewsApi
 4. Expo
-5. Firebase
