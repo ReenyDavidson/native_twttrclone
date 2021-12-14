@@ -17,6 +17,7 @@ import SportsNewsScreen from "../screens/NewsScreens/SportsNewsScreen";
 import TechnologyNewsScreen from "../screens/NewsScreens/TechnologyNewsScreen";
 import TravelNewsScreen from "../screens/NewsScreens/TravelNewsScreen";
 import TechTodayDetailScreen from "../screens/NewsDetailsScreens/TechTodayDetailScreen";
+import CryptoTodayDetailScreen from "../screens/NewsDetailsScreens/CryptoTodayDetailScreen";
 import SignUpScreen from "../screens/AuthScreens/SignUpScreen";
 import SignInScreen from "../screens/AuthScreens/SignInScreen";
 
@@ -134,7 +135,7 @@ function TabStack() {
           title: "Cryptocurrency",
           headerTitleStyle: { fontFamily: "QuicksandBold", color: "#fff" },
           headerShown: true,
-          headerStyle: { elevation: 0, backgroundColor: "#000" },
+          headerStyle: { elevation: 0, backgroundColor: "#0C0C1C" },
           transitionSpec: {
             open: config,
             close: config,
@@ -281,26 +282,15 @@ function TabStack() {
           },
         }}
       />
+
       <Stack.Screen
-        name="SignUpScreen"
-        component={SignUpScreen}
+        name="CryptoTodayDetailScreen"
+        component={CryptoTodayDetailScreen}
         options={{
-          title: "Sign Up",
+          title: "Tech News",
           headerTitleStyle: { fontFamily: "QuicksandBold", color: "#fff" },
           headerShown: true,
-          transitionSpec: {
-            open: config,
-            close: config,
-          },
-        }}
-      />
-      <Stack.Screen
-        name="SignInScreen"
-        component={SignInScreen}
-        options={{
-          title: "Sign In",
-          headerTitleStyle: { fontFamily: "QuicksandBold", color: "#fff" },
-          headerShown: true,
+          headerStyle: { elevation: 0, backgroundColor: "#000" },
           transitionSpec: {
             open: config,
             close: config,
