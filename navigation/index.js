@@ -18,6 +18,7 @@ import TechnologyNewsScreen from "../screens/NewsScreens/TechnologyNewsScreen";
 import TravelNewsScreen from "../screens/NewsScreens/TravelNewsScreen";
 import TechTodayDetailScreen from "../screens/NewsDetailsScreens/TechTodayDetailScreen";
 import CryptoTodayDetailScreen from "../screens/NewsDetailsScreens/CryptoTodayDetailScreen";
+import BusinessTodayDetailScreen from "../screens/NewsDetailsScreens/BusinessTodayDetaliScreen";
 import SignUpScreen from "../screens/AuthScreens/SignUpScreen";
 import SignInScreen from "../screens/AuthScreens/SignInScreen";
 
@@ -286,6 +287,20 @@ function TabStack() {
       <Stack.Screen
         name="CryptoTodayDetailScreen"
         component={CryptoTodayDetailScreen}
+        options={{
+          title: "Tech News",
+          headerTitleStyle: { fontFamily: "QuicksandBold", color: "#fff" },
+          headerShown: true,
+          headerStyle: { elevation: 0, backgroundColor: "#000" },
+          transitionSpec: {
+            open: config,
+            close: config,
+          },
+        }}
+      />
+      <Stack.Screen
+        name="BusinessTodayDetailScreen"
+        component={BusinessTodayDetailScreen}
         options={{
           title: "Tech News",
           headerTitleStyle: { fontFamily: "QuicksandBold", color: "#fff" },
