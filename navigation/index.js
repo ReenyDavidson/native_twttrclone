@@ -4,8 +4,8 @@ import { NavigationContainer } from "@react-navigation/native";
 import * as React from "react";
 import firebase from "firebase";
 
-import NewTweetScreen from "../screens/NewTweetScreen";
 import Tabs from "./Tabs/BottomTab";
+import NewTweetScreen from "../screens/NewTweetScreen";
 import CryptoNewsScreen from "../screens/NewsScreens/CryptoNewsScreen";
 import BusinessNewsScreen from "../screens/NewsScreens/BusinessNewsScreen";
 import EntertainmentNewsScreen from "../screens/NewsScreens/EntertainmentNewsScreen";
@@ -19,10 +19,11 @@ import TravelNewsScreen from "../screens/NewsScreens/TravelNewsScreen";
 import TechTodayDetailScreen from "../screens/NewsDetailsScreens/TechTodayDetailScreen";
 import CryptoTodayDetailScreen from "../screens/NewsDetailsScreens/CryptoTodayDetailScreen";
 import BusinessTodayDetailScreen from "../screens/NewsDetailsScreens/BusinessTodayDetaliScreen";
+import EntertainmentTodayDetailScreen from "../screens/NewsDetailsScreens/BusinessTodayDetaliScreen";
 import SignUpScreen from "../screens/AuthScreens/SignUpScreen";
 import SignInScreen from "../screens/AuthScreens/SignInScreen";
 
-import { Text, LogBox } from "react-native";
+import { LogBox } from "react-native";
 import OnboardingScreen from "../screens/AuthScreens/OnboardingScreen";
 
 LogBox.ignoreAllLogs(true);
@@ -150,7 +151,7 @@ function TabStack() {
           title: "Business",
           headerTitleStyle: { fontFamily: "QuicksandBold", color: "#fff" },
           headerShown: true,
-          headerStyle: { elevation: 0, backgroundColor: "#000" },
+          headerStyle: { elevation: 0, backgroundColor: "#0C0C1C" },
           transitionSpec: {
             open: config,
             close: config,
@@ -164,7 +165,7 @@ function TabStack() {
           title: "Entertainment",
           headerTitleStyle: { fontFamily: "QuicksandBold", color: "#fff" },
           headerShown: true,
-          headerStyle: { elevation: 0, backgroundColor: "#000" },
+          headerStyle: { elevation: 0, backgroundColor: "#0C0C1C" },
           transitionSpec: {
             open: config,
             close: config,
@@ -248,7 +249,7 @@ function TabStack() {
           title: "Technology",
           headerTitleStyle: { fontFamily: "QuicksandBold", color: "#fff" },
           headerShown: true,
-          headerStyle: { elevation: 0, backgroundColor: "#000" },
+          headerStyle: { elevation: 0, backgroundColor: "#0C0C1C" },
           transitionSpec: {
             open: config,
             close: config,
@@ -288,7 +289,7 @@ function TabStack() {
         name="CryptoTodayDetailScreen"
         component={CryptoTodayDetailScreen}
         options={{
-          title: "Tech News",
+          title: "Crypto News",
           headerTitleStyle: { fontFamily: "QuicksandBold", color: "#fff" },
           headerShown: true,
           headerStyle: { elevation: 0, backgroundColor: "#000" },
@@ -302,7 +303,21 @@ function TabStack() {
         name="BusinessTodayDetailScreen"
         component={BusinessTodayDetailScreen}
         options={{
-          title: "Tech News",
+          title: "Business News",
+          headerTitleStyle: { fontFamily: "QuicksandBold", color: "#fff" },
+          headerShown: true,
+          headerStyle: { elevation: 0, backgroundColor: "#000" },
+          transitionSpec: {
+            open: config,
+            close: config,
+          },
+        }}
+      />
+      <Stack.Screen
+        name="EntertainmentTodayDetailScreen"
+        component={EntertainmentTodayDetailScreen}
+        options={{
+          title: "Entertainment News",
           headerTitleStyle: { fontFamily: "QuicksandBold", color: "#fff" },
           headerShown: true,
           headerStyle: { elevation: 0, backgroundColor: "#000" },
