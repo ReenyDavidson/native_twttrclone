@@ -34,11 +34,11 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     padding: 20,
     width: "100%",
-    backgroundColor: "#000",
+    backgroundColor: "#0c0c1c",
   },
   titleContainer: {
     width: 250,
-    backgroundColor: "#000",
+    backgroundColor: "#0c0c1c",
     justifyContent: "flex-start",
     alignItems: "flex-start",
     marginTop: 2,

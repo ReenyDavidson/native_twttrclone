@@ -38,6 +38,6 @@ export default function TechnologyNewsScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#000",
+    backgroundColor: "#0c0c1c",
   },
 });
