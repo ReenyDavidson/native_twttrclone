@@ -3,6 +3,7 @@ import { Image, Keyboard, Pressable, StyleSheet, Text, TextInput, View } from "r
 import IonIcons from "react-native-vector-icons/Ionicons";
 import ImageUri from "../ProfilePicture";
 import * as ImagePicker from "expo-image-picker";
+import firebase from "firebase";
 
 export default function NewTweet() {
   const [image, setImage] = React.useState(null);
@@ -39,10 +40,28 @@ export default function NewTweet() {
     }
   };
 
+  const handleSubmit = () => {
+    firebase
+      .firestore()
+      .collection("posts")
+      .add({
+        text,
+        image,
+        createdAt: new Date(),
+        user: {
+          email: firebase.auth().currentUser.email,
+        },
+      });
+    setText("");
+
+    //Upload image to firebase storage
+    firebase.storage().ref(`/posts/${image}`).putFile(image);
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>
-        <Pressable style={styles.Button}>
+        <Pressable style={styles.Button} onPress={handleSubmit}>
           <Text style={styles.buttonText}>Tweet</Text>
         </Pressable>
       </View>
