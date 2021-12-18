@@ -2,11 +2,16 @@ import React from "react";
 import { StyleSheet, View, Text } from "react-native";
 import ImageUri from "../../ProfilePicture/index";
 import moment from "moment";
+import firebase from "firebase";
 
-const LeftContainer = ({ tweet }) => {
+const LeftContainer = () => {
   return (
     <View style={styles.Headercontainer}>
-      <ImageUri image={tweet.user.image} size={55} radius={10} />
+      <ImageUri
+        image={"https://i.pinimg.com/736x/3f/97/3a/3f973a4cb980751c809b682042ca3aff.jpg"}
+        size={55}
+        radius={10}
+      />
       <View
         style={{
           flexDirection: "row",
@@ -17,10 +22,10 @@ const LeftContainer = ({ tweet }) => {
         }}
       >
         <View style={{ flexDirection: "column" }}>
-          <Text style={styles.nameContainer}>{tweet.user.name}</Text>
-          <Text style={styles.usernameContainer}>@{tweet.user.username}</Text>
+          <Text style={styles.nameContainer}>name</Text>
+          <Text style={styles.usernameContainer}>@username</Text>
         </View>
-        <Text style={styles.createdAtContainer}>{moment(tweet.createdAt).fromNow()}</Text>
+        <Text style={styles.createdAtContainer}>2pm</Text>
       </View>
     </View>
   );

@@ -1,5 +1,6 @@
-import React, { useEffect } from "react";
-import { Image, Keyboard, Pressable, StyleSheet, Text, TextInput, View } from "react-native";
+import React from "react";
+import { Image, Pressable, StyleSheet, Text, TextInput, View } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import IonIcons from "react-native-vector-icons/Ionicons";
 import ImageUri from "../ProfilePicture";
 import * as ImagePicker from "expo-image-picker";
@@ -8,6 +9,8 @@ import firebase from "firebase";
 export default function NewTweet() {
   const [image, setImage] = React.useState(null);
   const [text, setText] = React.useState("");
+
+  const navigation = useNavigation();
 
   const handleTextChange = (text) => {
     setText(text);
@@ -51,11 +54,20 @@ export default function NewTweet() {
         user: {
           email: firebase.auth().currentUser.email,
         },
+      })
+      .then(() => {
+        firebase
+          .firestore()
+          .collection("users")
+          .doc(firebase.auth().currentUser.uid)
+          .update({
+            posts: firebase.firestore.FieldValue.increment(1),
+          });
       });
-    setText("");
 
-    //Upload image to firebase storage
-    firebase.storage().ref(`/posts/${image}`).putFile(image);
+    setText("");
+    setImage(null);
+    navigation.navigate("TabOneScreen");
   };
 
   return (

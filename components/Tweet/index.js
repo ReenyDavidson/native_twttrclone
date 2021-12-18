@@ -6,6 +6,7 @@ import RightContainer from "./RightContainer";
 const Tweet = ({ data }) => {
   return (
     <View style={styles.container}>
+      <LeftContainer />
       <RightContainer data={data} />
     </View>
   );

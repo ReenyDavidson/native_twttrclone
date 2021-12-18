@@ -10,6 +10,7 @@ const RightContainer = ({ data }) => {
         <Text style={styles.contentContainer}>{data.text}</Text>
         {!!data.image && <Image source={{ uri: data.image }} style={styles.contentImage} />}
       </View>
+      <Footer data={data} />
     </View>
   );
 };
@@ -23,11 +24,11 @@ const styles = StyleSheet.create({
     backgroundColor: "#0C0C1C",
   },
   contentContainer: {
-    fontSize: 16,
+    fontSize: 18,
     letterSpacing: 0.5,
     lineHeight: 25,
     paddingBottom: 20,
-    fontFamily: "QuicksandSemiBold",
+    fontFamily: "QuicksandMedium",
     color: "#fff",
     height: "auto",
   },

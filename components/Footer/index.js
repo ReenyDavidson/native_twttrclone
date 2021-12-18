@@ -2,15 +2,22 @@ import React, { useState } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { Ionicons } from "react-native-vector-icons/";
 
-const Footer = ({ tweet }) => {
+const Footer = () => {
+  const [likes, setLikes] = useState(null);
+  const [comments, setComments] = useState(null);
+
   const [click, setclick] = useState({ name: "heart-outline", color: "#86FF" });
   const onClick = () => {
     if (click.name === "heart-outline") {
       setclick({ name: "heart", color: "#66FF00" });
-      tweet.numberOfLikes += 1;
+      setLikes(likes + 1);
     } else if (click.name === "heart") {
       setclick({ name: "heart-outline", color: "#86FF" });
-      tweet.numberOfLikes -= 1;
+      if (likes === 0) {
+        setLikes(" ");
+      } else {
+        setLikes(likes - 1);
+      }
     }
   };
 
@@ -18,11 +25,11 @@ const Footer = ({ tweet }) => {
     <View style={styles.footerContainer}>
       <View style={styles.IconContainer}>
         <Ionicons name={"chatbubble-outline"} size={24} color={"#FF8C"} />
-        <Text style={styles.number}>{tweet.numberOfComments}</Text>
+        <Text style={styles.number}></Text>
       </View>
       <View style={styles.IconContainer}>
         <Ionicons name={click.name} size={24} color={click.color} onPress={onClick} />
-        <Text style={styles.number}>{tweet.numberOfLikes}</Text>
+        <Text style={styles.number}>{likes}</Text>
       </View>
       <View style={styles.IconContainer}>
         <Ionicons
