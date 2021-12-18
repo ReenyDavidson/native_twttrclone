@@ -46,3 +46,15 @@ export const handleSignIn = async (email, password) => {
       console.error(error);
     });
 };
+
+export const handleSignout = async () => {
+  await firebase
+    .auth()
+    .signOut()
+    .then(() => {
+      console.log("Signed Out");
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+};

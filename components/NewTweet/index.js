@@ -50,6 +50,7 @@ export default function NewTweet() {
       .add({
         text,
         image,
+        likes: 0,
         createdAt: new Date(),
         user: {
           email: firebase.auth().currentUser.email,

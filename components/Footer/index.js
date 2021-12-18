@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { Ionicons } from "react-native-vector-icons/";
+import firebase from "firebase";
 
 const Footer = () => {
   const [likes, setLikes] = useState(null);

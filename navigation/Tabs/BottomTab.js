@@ -1,5 +1,6 @@
 import * as React from "react";
-import { Image, View } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { Image, View, Pressable } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "react-native-vector-icons/";
 
@@ -13,6 +14,7 @@ import SearchBar from "../../components/SearchBarComponent";
 const Tab = createBottomTabNavigator();
 
 export default function Tabs() {
+  const navigation = useNavigation();
   return (
     <Tab.Navigator
       initialRouteName="TabOneScreen"
@@ -80,10 +82,17 @@ export default function Tabs() {
             </View>
           ),
           headerRight: () => (
-            <ImageUri
-              size={30}
-              image={"https://i.pinimg.com/736x/3f/97/3a/3f973a4cb980751c809b682042ca3aff.jpg"}
-            />
+            <Pressable
+              style={{ flexDirection: "row", alignItems: "center" }}
+              onPress={() => {
+                navigation.navigate("ProfileScreen");
+              }}
+            >
+              <ImageUri
+                size={30}
+                image={"https://i.pinimg.com/736x/3f/97/3a/3f973a4cb980751c809b682042ca3aff.jpg"}
+              />
+            </Pressable>
           ),
           headerRightContainerStyle: { paddingHorizontal: 15 },
         }}
@@ -95,10 +104,17 @@ export default function Tabs() {
           tabBarLabel: "News",
           headerTitle: () => <SearchBar />,
           headerRight: () => (
-            <ImageUri
-              image={"https://i.pinimg.com/736x/3f/97/3a/3f973a4cb980751c809b682042ca3aff.jpg"}
-              size={30}
-            />
+            <Pressable
+              style={{ flexDirection: "row", alignItems: "center" }}
+              onPress={() => {
+                navigation.navigate("ProfileScreen");
+              }}
+            >
+              <ImageUri
+                size={30}
+                image={"https://i.pinimg.com/736x/3f/97/3a/3f973a4cb980751c809b682042ca3aff.jpg"}
+              />
+            </Pressable>
           ),
           headerLeftContainerStyle: { marginLeft: 15 },
           headerRightContainerStyle: { paddingRight: 15 },
