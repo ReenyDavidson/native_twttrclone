@@ -7,7 +7,6 @@ import { Ionicons } from "@expo/vector-icons";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
   const [visible, setVisibility] = React.useState({ name: "eye-off" });
 
   const navigation = useNavigation();
@@ -36,7 +35,7 @@ const Login = () => {
     setPassword(text);
   };
 
-  const handleSignInClick = async () => {
+  const handleSubmit = async () => {
     await handleSignIn(email, password);
     console.log("Login successful");
   };
@@ -92,7 +91,7 @@ const Login = () => {
         <Pressable style={styles.forgotContainer}>
           <Text style={styles.forgot}>Forgot Password?</Text>
         </Pressable>
-        <Pressable style={styles.button} onPress={handleSignInClick}>
+        <Pressable style={styles.button} onPress={handleSubmit}>
           <Text style={{ fontFamily: "QuicksandBold", fontSize: 20 }}>SIGN IN</Text>
         </Pressable>
         <Pressable

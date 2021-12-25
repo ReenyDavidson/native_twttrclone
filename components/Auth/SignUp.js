@@ -8,11 +8,12 @@ const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-
   const [visible, setVisibility] = React.useState({ name: "eye-off" });
 
+  //Enables navigation to other screens
   const navigation = useNavigation();
 
+  //Toggles the eye icon to show the password
   const ToggleVisibilty = () => {
     if (visible.name === "eye") {
       setVisibility({ name: "eye-off" });
@@ -21,6 +22,7 @@ const SignUp = () => {
     }
   };
 
+  //Handles password visibility when the eye icon is pressed
   const secureTextEntry = () => {
     if (visible.name === "eye") {
       return false;
@@ -29,18 +31,22 @@ const SignUp = () => {
     }
   };
 
+  //Hnadles email input
   const handleEmailChange = (text) => {
     setEmail(text);
   };
 
+  //Handles password input
   const handlePasswordChange = (text) => {
     setPassword(text);
   };
 
+  //Handles confirm password input
   const handleConfirmPasswordChange = (text) => {
     setConfirmPassword(text);
   };
 
+  //Handles sign up
   const handleSignUpPress = async () => {
     if (email == "" && password !== confirmPassword && password == "" && confirmPassword == "") {
       console.error("Invalid Credentials");

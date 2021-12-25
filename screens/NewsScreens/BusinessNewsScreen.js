@@ -12,7 +12,7 @@ export default function BusinessNewsScreen() {
           backgroundColor: "#282C35",
           fontSize: 20,
           fontFamily: "QuicksandBold",
-          height: 40,
+          height: 50,
           padding: 10,
         }}
       >
@@ -25,11 +25,11 @@ export default function BusinessNewsScreen() {
           color: "#fff",
           fontSize: 23,
           fontFamily: "QuicksandBold",
-          height: 65,
+          height: 70,
           padding: 20,
         }}
       >
-        Today's Pick.
+        Today's Pick
       </Text>
       <BusinessToday />
     </ScrollView>
