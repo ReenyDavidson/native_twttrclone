@@ -11,3 +11,4 @@ also tweeting from a dummy account.
 4. Expo
 5. Firebase
 6. Firestore
+7. moment 
