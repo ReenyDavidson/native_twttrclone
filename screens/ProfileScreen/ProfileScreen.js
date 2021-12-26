@@ -2,28 +2,24 @@ import React from "react";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { handleSignout } from "../../services/firebase/firebaseConfig";
+import firebase from "firebase";
 
 const ProfileScreen = () => {
   const navigation = useNavigation();
   return (
     <View style={styles.container}>
-      <View>
-        <Text>ProfileScreen</Text>
-      </View>
-      <View>
-        <Text>ProfileScreen</Text>
+      <Text>{firebase.auth().currentUser.email}</Text>
 
-        <Pressable
-          style={styles.button}
-          onPress={() => {
-            handleSignout();
-            navigation.navigate("SignInScreen");
-            console.log("user signed out");
-          }}
-        >
-          <Text>sign out</Text>
-        </Pressable>
-      </View>
+      <Pressable
+        style={styles.button}
+        onPress={() => {
+          handleSignout();
+          navigation.navigate("SignInScreen");
+          console.log("user signed out");
+        }}
+      >
+        <Text>sign out</Text>
+      </Pressable>
     </View>
   );
 };
