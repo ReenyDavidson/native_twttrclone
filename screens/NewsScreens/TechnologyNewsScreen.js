@@ -29,7 +29,7 @@ export default function TechnologyNewsScreen() {
           padding: 20,
         }}
       >
-        Today's Pick.
+        Latest News
       </Text>
       <TechnologyToday />
     </ScrollView>

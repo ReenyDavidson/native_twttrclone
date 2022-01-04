@@ -29,7 +29,7 @@ export default function SportsNewsScreen() {
           padding: 20,
         }}
       >
-        Today's Pick.
+        Latest News{" "}
       </Text>
       <SportsToday />
     </ScrollView>

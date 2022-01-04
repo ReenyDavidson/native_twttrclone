@@ -29,7 +29,7 @@ export default function HealthNewsScreen() {
           padding: 20,
         }}
       >
-        Today's Pick.
+        Latest News
       </Text>
       <HealthToday />
     </ScrollView>

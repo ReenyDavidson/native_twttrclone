@@ -29,7 +29,7 @@ export default function EntertainmentNewsScreen() {
           padding: 20,
         }}
       >
-        Today's Pick.
+        Latest News
       </Text>
       <EntertainmentToday />
     </ScrollView>

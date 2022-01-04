@@ -29,7 +29,7 @@ export default function CarsNewsScreen() {
           padding: 20,
         }}
       >
-        Today's Pick.
+        Latest News
       </Text>
       <CarsToday />
     </ScrollView>

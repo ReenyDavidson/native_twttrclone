@@ -29,7 +29,7 @@ export default function TravelNewsScreen() {
           padding: 20,
         }}
       >
-        Today's Pick.
+        Latest News
       </Text>
       <TravelToday />
     </ScrollView>
