@@ -346,6 +346,62 @@ function TabStack() {
           },
         }}
       />
+      <Stack.Screen
+        name="ScienceTodayDetailScreen"
+        component={ScienceTodayDetailScreen}
+        options={{
+          title: "Entertainment News",
+          headerTitleStyle: { fontFamily: "QuicksandBold", color: "#fff" },
+          headerShown: true,
+          headerStyle: { elevation: 0, backgroundColor: "#000" },
+          transitionSpec: {
+            open: config,
+            close: config,
+          },
+        }}
+      />
+      <Stack.Screen
+        name="CarTodayDetailScreen"
+        component={CarTodayDetailScreen}
+        options={{
+          title: "Entertainment News",
+          headerTitleStyle: { fontFamily: "QuicksandBold", color: "#fff" },
+          headerShown: true,
+          headerStyle: { elevation: 0, backgroundColor: "#000" },
+          transitionSpec: {
+            open: config,
+            close: config,
+          },
+        }}
+      />
+      <Stack.Screen
+        name="FashionTodayDetailScreen"
+        component={FashionTodayDetailScreen}
+        options={{
+          title: "Entertainment News",
+          headerTitleStyle: { fontFamily: "QuicksandBold", color: "#fff" },
+          headerShown: true,
+          headerStyle: { elevation: 0, backgroundColor: "#000" },
+          transitionSpec: {
+            open: config,
+            close: config,
+          },
+        }}
+      />
+      <Stack.Screen
+        name="HealthTodayDetailScreen"
+        component={HealthTodayDetailScreen}
+        options={{
+          title: "Entertainment News",
+          headerTitleStyle: { fontFamily: "QuicksandBold", color: "#fff" },
+          headerShown: true,
+          headerStyle: { elevation: 0, backgroundColor: "#000" },
+          transitionSpec: {
+            open: config,
+            close: config,
+          },
+        }}
+      />
     </Stack.Navigator>
   );
 }

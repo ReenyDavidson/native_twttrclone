@@ -26,6 +26,7 @@ export default function Onboardingdata() {
     <FlatList
       data={onboardingdata}
       centerContent={true}
+      decelerationRate="fast"
       horizontal={true}
       showsHorizontalScrollIndicator={false}
       renderItem={({ item }) => (
