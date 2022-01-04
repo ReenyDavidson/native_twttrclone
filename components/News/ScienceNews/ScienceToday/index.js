@@ -1,12 +1,19 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { StyleSheet, Text, View, Pressable } from "react-native";
 import moment from "moment";
 
 import NewsHeaderImage from "../../../NewsHeaderImage";
 
 const ScienceTodayList = ({ item }) => {
+  const navigation = useNavigation();
   return (
-    <View style={styles.container}>
+    <Pressable
+      style={styles.container}
+      onPress={() => {
+        navigation.navigate("ScienceTodayDetailScreen", item);
+      }}
+    >
       <View style={styles.titleContainer}>
         <Text style={styles.title}>{item.title}</Text>
         <View style={styles.tinies}>
@@ -15,7 +22,7 @@ const ScienceTodayList = ({ item }) => {
         </View>
       </View>
       <NewsHeaderImage image={item.urlToImage} height={80} width={130} borderRadius={5} />
-    </View>
+    </Pressable>
   );
 };
 
@@ -27,11 +34,11 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     padding: 20,
     width: "100%",
-    backgroundColor: "#000",
+    backgroundColor: "#0C0C1C",
   },
   titleContainer: {
     width: 250,
-    backgroundColor: "#000",
+    backgroundColor: "#0C0C1C",
     justifyContent: "flex-start",
     alignItems: "flex-start",
     marginTop: 2,

@@ -20,6 +20,10 @@ import TechTodayDetailScreen from "../screens/NewsDetailsScreens/TechTodayDetail
 import CryptoTodayDetailScreen from "../screens/NewsDetailsScreens/CryptoTodayDetailScreen";
 import BusinessTodayDetailScreen from "../screens/NewsDetailsScreens/BusinessTodayDetaliScreen";
 import EntertainmentTodayDetailScreen from "../screens/NewsDetailsScreens/BusinessTodayDetaliScreen";
+import CarTodayDetailScreen from "../screens/NewsDetailsScreens/CarTodayDetailScreen";
+import FashionTodayDetailScreen from "../screens/NewsDetailsScreens/FashionTodayDetailScreen";
+import ScienceTodayDetailScreen from "../screens/NewsDetailsScreens/ScienceTodayDetailScreen";
+import HealthTodayDetailScreen from "../screens/NewsDetailsScreens/HealthTodayDetailScreen";
 import ProfileScreen from "../screens/ProfileScreen/ProfileScreen";
 import SignUpScreen from "../screens/AuthScreens/SignUpScreen";
 import SignInScreen from "../screens/AuthScreens/SignInScreen";
