@@ -198,7 +198,7 @@ function TabStack() {
           title: "Science",
           headerTitleStyle: { fontFamily: "QuicksandBold", color: "#fff" },
           headerShown: true,
-          headerStyle: { elevation: 0, backgroundColor: "#000" },
+          headerStyle: { elevation: 0, backgroundColor: "#0C0C1C" },
           transitionSpec: {
             open: config,
             close: config,
@@ -212,7 +212,7 @@ function TabStack() {
           title: "Cars",
           headerTitleStyle: { fontFamily: "QuicksandBold", color: "#fff" },
           headerShown: true,
-          headerStyle: { elevation: 0, backgroundColor: "#000" },
+          headerStyle: { elevation: 0, backgroundColor: "#0C0C1C" },
           transitionSpec: {
             open: config,
             close: config,
@@ -226,7 +226,7 @@ function TabStack() {
           title: "Fashion",
           headerTitleStyle: { fontFamily: "QuicksandBold", color: "#fff" },
           headerShown: true,
-          headerStyle: { elevation: 0, backgroundColor: "#000" },
+          headerStyle: { elevation: 0, backgroundColor: "#0C0C1C" },
           transitionSpec: {
             open: config,
             close: config,
@@ -240,7 +240,7 @@ function TabStack() {
           title: "Health",
           headerTitleStyle: { fontFamily: "QuicksandBold", color: "#fff" },
           headerShown: true,
-          headerStyle: { elevation: 0, backgroundColor: "#000" },
+          headerStyle: { elevation: 0, backgroundColor: "#0C0C1C" },
           transitionSpec: {
             open: config,
             close: config,
@@ -254,7 +254,7 @@ function TabStack() {
           title: "Sports",
           headerTitleStyle: { fontFamily: "QuicksandBold", color: "#fff" },
           headerShown: true,
-          headerStyle: { elevation: 0, backgroundColor: "#000" },
+          headerStyle: { elevation: 0, backgroundColor: "#0C0C1C" },
           transitionSpec: {
             open: config,
             close: config,
@@ -282,7 +282,7 @@ function TabStack() {
           title: "Travel",
           headerTitleStyle: { fontFamily: "QuicksandBold", color: "#fff" },
           headerShown: true,
-          headerStyle: { elevation: 0, backgroundColor: "#000" },
+          headerStyle: { elevation: 0, backgroundColor: "#0C0C1C" },
           transitionSpec: {
             open: config,
             close: config,
