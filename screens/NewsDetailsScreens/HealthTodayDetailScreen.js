@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigation } from "@react-navigation/native";
 import { StyleSheet, Text, View } from "react-native";
 
-export default function BusinessTodayDetailScreen() {
+export default function HealthTodayDetailScreen() {
   const navigation = useNavigation();
   const item = navigation.getState();
   return (
