@@ -352,7 +352,7 @@ function TabStack() {
         name="ScienceTodayDetailScreen"
         component={ScienceTodayDetailScreen}
         options={{
-          title: "Entertainment News",
+          title: "Science News",
           headerTitleStyle: { fontFamily: "QuicksandBold", color: "#fff" },
           headerShown: true,
           headerStyle: { elevation: 0, backgroundColor: "#0C0C1C" },
@@ -366,7 +366,7 @@ function TabStack() {
         name="CarTodayDetailScreen"
         component={CarTodayDetailScreen}
         options={{
-          title: "Entertainment News",
+          title: "Cars News",
           headerTitleStyle: { fontFamily: "QuicksandBold", color: "#fff" },
           headerShown: true,
           headerStyle: { elevation: 0, backgroundColor: "#0C0C1C" },
@@ -380,7 +380,7 @@ function TabStack() {
         name="FashionTodayDetailScreen"
         component={FashionTodayDetailScreen}
         options={{
-          title: "Entertainment News",
+          title: "Fashion News",
           headerTitleStyle: { fontFamily: "QuicksandBold", color: "#fff" },
           headerShown: true,
           headerStyle: { elevation: 0, backgroundColor: "#0C0C1C" },
@@ -394,7 +394,7 @@ function TabStack() {
         name="HealthTodayDetailScreen"
         component={HealthTodayDetailScreen}
         options={{
-          title: "Entertainment News",
+          title: "Health News",
           headerTitleStyle: { fontFamily: "QuicksandBold", color: "#fff" },
           headerShown: true,
           headerStyle: { elevation: 0, backgroundColor: "#0C0C1C" },
@@ -422,7 +422,7 @@ function TabStack() {
         name="TravelTodayDetailScreen"
         component={TravelTodayDetailScreen}
         options={{
-          title: "Entertainment News",
+          title: "Travel News",
           headerTitleStyle: { fontFamily: "QuicksandBold", color: "#fff" },
           headerShown: true,
           headerStyle: { elevation: 0, backgroundColor: "#0C0C1C" },

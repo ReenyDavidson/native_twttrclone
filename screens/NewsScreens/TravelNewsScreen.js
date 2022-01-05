@@ -38,6 +38,6 @@ export default function TravelNewsScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#000",
+    backgroundColor: "#0C0C1C",
   },
 });
