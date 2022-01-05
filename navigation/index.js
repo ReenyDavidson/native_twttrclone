@@ -24,6 +24,8 @@ import CarTodayDetailScreen from "../screens/NewsDetailsScreens/CarTodayDetailSc
 import FashionTodayDetailScreen from "../screens/NewsDetailsScreens/FashionTodayDetailScreen";
 import ScienceTodayDetailScreen from "../screens/NewsDetailsScreens/ScienceTodayDetailScreen";
 import HealthTodayDetailScreen from "../screens/NewsDetailsScreens/HealthTodayDetailScreen";
+import SportsTodayDetailScreen from "../screens/NewsDetailsScreens/SportsTodayDetailScreen";
+import TravelTodayDetailScreen from "../screens/NewsDetailsScreens/TravelTodayDetailScreen";
 import ProfileScreen from "../screens/ProfileScreen/ProfileScreen";
 import SignUpScreen from "../screens/AuthScreens/SignUpScreen";
 import SignInScreen from "../screens/AuthScreens/SignInScreen";
@@ -296,7 +298,7 @@ function TabStack() {
           title: "Tech News",
           headerTitleStyle: { fontFamily: "QuicksandBold", color: "#fff" },
           headerShown: true,
-          headerStyle: { elevation: 0, backgroundColor: "#000" },
+          headerStyle: { elevation: 0, backgroundColor: "#0C0C1C" },
           transitionSpec: {
             open: config,
             close: config,
@@ -311,7 +313,7 @@ function TabStack() {
           title: "Crypto News",
           headerTitleStyle: { fontFamily: "QuicksandBold", color: "#fff" },
           headerShown: true,
-          headerStyle: { elevation: 0, backgroundColor: "#000" },
+          headerStyle: { elevation: 0, backgroundColor: "#0C0C1C" },
           transitionSpec: {
             open: config,
             close: config,
@@ -325,7 +327,7 @@ function TabStack() {
           title: "Business News",
           headerTitleStyle: { fontFamily: "QuicksandBold", color: "#fff" },
           headerShown: true,
-          headerStyle: { elevation: 0, backgroundColor: "#000" },
+          headerStyle: { elevation: 0, backgroundColor: "#0C0C1C" },
           transitionSpec: {
             open: config,
             close: config,
@@ -339,7 +341,7 @@ function TabStack() {
           title: "Entertainment News",
           headerTitleStyle: { fontFamily: "QuicksandBold", color: "#fff" },
           headerShown: true,
-          headerStyle: { elevation: 0, backgroundColor: "#000" },
+          headerStyle: { elevation: 0, backgroundColor: "#0C0C1C" },
           transitionSpec: {
             open: config,
             close: config,
@@ -353,7 +355,7 @@ function TabStack() {
           title: "Entertainment News",
           headerTitleStyle: { fontFamily: "QuicksandBold", color: "#fff" },
           headerShown: true,
-          headerStyle: { elevation: 0, backgroundColor: "#000" },
+          headerStyle: { elevation: 0, backgroundColor: "#0C0C1C" },
           transitionSpec: {
             open: config,
             close: config,
@@ -367,7 +369,7 @@ function TabStack() {
           title: "Entertainment News",
           headerTitleStyle: { fontFamily: "QuicksandBold", color: "#fff" },
           headerShown: true,
-          headerStyle: { elevation: 0, backgroundColor: "#000" },
+          headerStyle: { elevation: 0, backgroundColor: "#0C0C1C" },
           transitionSpec: {
             open: config,
             close: config,
@@ -381,7 +383,7 @@ function TabStack() {
           title: "Entertainment News",
           headerTitleStyle: { fontFamily: "QuicksandBold", color: "#fff" },
           headerShown: true,
-          headerStyle: { elevation: 0, backgroundColor: "#000" },
+          headerStyle: { elevation: 0, backgroundColor: "#0C0C1C" },
           transitionSpec: {
             open: config,
             close: config,
@@ -395,7 +397,35 @@ function TabStack() {
           title: "Entertainment News",
           headerTitleStyle: { fontFamily: "QuicksandBold", color: "#fff" },
           headerShown: true,
-          headerStyle: { elevation: 0, backgroundColor: "#000" },
+          headerStyle: { elevation: 0, backgroundColor: "#0C0C1C" },
+          transitionSpec: {
+            open: config,
+            close: config,
+          },
+        }}
+      />
+      <Stack.Screen
+        name="SportsTodayDetailScreen"
+        component={SportsTodayDetailScreen}
+        options={{
+          title: "Entertainment News",
+          headerTitleStyle: { fontFamily: "QuicksandBold", color: "#fff" },
+          headerShown: true,
+          headerStyle: { elevation: 0, backgroundColor: "#0C0C1C" },
+          transitionSpec: {
+            open: config,
+            close: config,
+          },
+        }}
+      />
+      <Stack.Screen
+        name="TravelTodayDetailScreen"
+        component={TravelTodayDetailScreen}
+        options={{
+          title: "Entertainment News",
+          headerTitleStyle: { fontFamily: "QuicksandBold", color: "#fff" },
+          headerShown: true,
+          headerStyle: { elevation: 0, backgroundColor: "#0C0C1C" },
           transitionSpec: {
             open: config,
             close: config,
