@@ -25,17 +25,17 @@ const Footer = () => {
   return (
     <View style={styles.footerContainer}>
       <View style={styles.IconContainer}>
-        <Ionicons name={"chatbubble-outline"} size={24} color={"#FF8C"} />
+        <Ionicons name={"chatbubble-outline"} size={20} color={"#FF8C"} />
         <Text style={styles.number}></Text>
       </View>
       <View style={styles.IconContainer}>
-        <Ionicons name={click.name} size={24} color={click.color} onPress={onClick} />
+        <Ionicons name={click.name} size={20} color={click.color} onPress={onClick} />
         <Text style={styles.number}>{likes}</Text>
       </View>
       <View style={styles.IconContainer}>
         <Ionicons
           name={"share-social-outline"}
-          size={24}
+          size={20}
           color={"#248ED2"}
           fontFamily={"QuicksandBold"}
         />
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
   footerContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
-    marginTop: 4,
+
     width: "90%",
     marginHorizontal: "2%",
   },
