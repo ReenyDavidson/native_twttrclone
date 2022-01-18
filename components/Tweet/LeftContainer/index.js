@@ -24,7 +24,7 @@ const LeftContainer = () => {
         <View style={{ flexDirection: "column" }}>
           <Text style={styles.nameContainer}>name</Text>
           <Text style={styles.usernameContainer}>
-            @{firebase.auth().currentUser.email.slice(0, -4)}
+            @{firebase.auth().currentUser.email.substring(0, email.lastIndexOf("@"))}
           </Text>
         </View>
         <Text style={styles.createdAtContainer}>2pm</Text>
