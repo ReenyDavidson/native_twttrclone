@@ -7,7 +7,6 @@ import { Ionicons } from "react-native-vector-icons/";
 import TabOneScreen from "../../screens/TabsScreens/TabOneScreen";
 import TabTwoScreen from "../../screens/TabsScreens/TabTwoScreen";
 import TabThreeScreen from "../../screens/TabsScreens/TabThreeScreen";
-import TabFourScreen from "../../screens/TabsScreens/TabFourScreen";
 import ImageUri from "../../components/ProfilePicture";
 import SearchBar from "../../components/SearchBarComponent";
 
@@ -37,8 +36,6 @@ export default function Tabs() {
           } else if (route.name === "TabTwoScreen") {
             size = focused ? 26 : 25;
           } else if (route.name === "TabThreeScreen") {
-            size = focused ? 26 : 25;
-          } else if (route.name === "TabFourScreen") {
             size = focused ? 26 : 25;
           }
 
@@ -125,15 +122,7 @@ export default function Tabs() {
         component={TabThreeScreen}
         options={{ tabBarLabel: "Chat" }}
       />
-      <Tab.Screen
-        name="TabFourScreen"
-        component={TabFourScreen}
-        options={{
-          tabBarLabel: "Notifications",
-          tabBarBadge: 7,
-          tabBarBadgeStyle: { backgroundColor: "#11DDAA", fontFamily: "QuicksandBold" },
-        }}
-      />
+      
     </Tab.Navigator>
   );
 }
