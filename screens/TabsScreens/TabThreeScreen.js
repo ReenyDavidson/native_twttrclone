@@ -31,7 +31,6 @@ export default function TabThreeScreen() {
           textAlign: "center",
           marginTop: 10,
           width: 400,
-
           lineHeight: 30,
         }}
       >

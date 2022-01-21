@@ -22,7 +22,7 @@ const LeftContainer = () => {
         }}
       >
         <View style={{ flexDirection: "column" }}>
-          <Text style={styles.nameContainer}>name</Text>
+          <Text style={styles.nameContainer}>Display Name</Text>
           <Text style={styles.usernameContainer}>
             @
             {firebase

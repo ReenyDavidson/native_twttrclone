@@ -26,8 +26,6 @@ export default function Tabs() {
           } else if (route.name === "TabTwoScreen") {
             iconName = focused ? "md-newspaper" : "md-newspaper-outline";
           } else if (route.name === "TabThreeScreen") {
-            iconName = focused ? "chatbubble-ellipses" : "chatbubble-ellipses-outline";
-          } else if (route.name === "TabFourScreen") {
             iconName = focused ? "notifications" : "notifications-outline";
           }
 
@@ -120,9 +118,16 @@ export default function Tabs() {
       <Tab.Screen
         name="TabThreeScreen"
         component={TabThreeScreen}
-        options={{ tabBarLabel: "Chat" }}
+        options={{
+          tabBarLabel: "notification",
+          headerTitle: "Notifications",
+          headerTitleStyle: {
+            fontFamily: "QuicksandSemiBold",
+            fontSize: 24,
+            color: "#FFF",
+          },
+        }}
       />
-      
     </Tab.Navigator>
   );
 }
