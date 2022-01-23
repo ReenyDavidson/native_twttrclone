@@ -73,11 +73,6 @@ export default function NewTweet() {
 
   return (
     <View style={styles.container}>
-      <View style={styles.headerContainer}>
-        <Pressable style={styles.Button} onPress={handleSubmit}>
-          <Text style={styles.buttonText}>Tweet</Text>
-        </Pressable>
-      </View>
       <View style={styles.newTweetInputContainer}>
         <ImageUri
           image={
@@ -88,7 +83,7 @@ export default function NewTweet() {
         <View style={styles.InputsContainer}>
           <TextInput
             style={styles.tweetInput}
-            placeholder={"What's happening?"}
+            placeholder={"What's up?!"}
             defaultValue={text}
             placeholderTextColor={"grey"}
             multiline={true}
@@ -105,6 +100,11 @@ export default function NewTweet() {
           <IonIcons name={"image-outline"} size={30} color={"#FFF"} onPress={handleImagePicker} />
         </View>
         {image && <Image source={{ uri: image }} style={styles.image} />}
+      </View>
+      <View style={styles.headerContainer}>
+        <Pressable style={styles.Button} onPress={handleSubmit}>
+          <Text style={styles.buttonText}>Make a post</Text>
+        </Pressable>
       </View>
     </View>
   );
@@ -125,7 +125,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   Button: {
-    backgroundColor: "#1DA1F2",
+    backgroundColor: "#11DDAA",
     borderRadius: 30,
   },
   buttonText: {
@@ -147,6 +147,7 @@ const styles = StyleSheet.create({
   tweetInput: {
     flex: 1,
     fontFamily: "QuicksandSemiBold",
+    padding: 10,
     fontSize: 20,
     height: "200%",
     width: 300,
