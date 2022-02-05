@@ -8,7 +8,15 @@ const ProfileScreen = () => {
   const navigation = useNavigation();
   return (
     <View style={styles.container}>
-      <Text>{firebase.auth().currentUser.email}</Text>
+      <Text
+        style={{
+          fontSize: 20,
+          fontFamily: "QuicksandMedium",
+          color: "#FFF",
+        }}
+      >
+        {firebase.auth().currentUser.email}
+      </Text>
 
       <Pressable
         style={styles.button}
@@ -18,7 +26,15 @@ const ProfileScreen = () => {
           console.log("user signed out");
         }}
       >
-        <Text>sign out</Text>
+        <Text
+          style={{
+            fontFamily: "QuicksandBold",
+            fontSize: 20,
+            color: "#FFF",
+          }}
+        >
+          sign out
+        </Text>
       </Pressable>
     </View>
   );
@@ -29,7 +45,7 @@ export default ProfileScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#0C0C1C",
     alignItems: "center",
     justifyContent: "center",
   },
