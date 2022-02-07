@@ -10,7 +10,7 @@ const ProfileScreen = () => {
   return (
     <View style={styles.container}>
       <ImageUri
-        size={30}
+        size={25}
         image={"https://i.pinimg.com/736x/3f/97/3a/3f973a4cb980751c809b682042ca3aff.jpg"}
       />
       <Text
