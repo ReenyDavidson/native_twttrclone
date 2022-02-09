@@ -28,7 +28,6 @@ const ProfileScreen = () => {
         onPress={() => {
           handleSignout();
           navigation.navigate("SignInScreen");
-          console.log("user signed out");
         }}
       >
         <Text

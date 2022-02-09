@@ -37,7 +37,6 @@ const Login = () => {
 
   const handleSubmit = async () => {
     await handleSignIn(email, password);
-    console.log("Login successful");
   };
 
   return (
