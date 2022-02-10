@@ -52,7 +52,7 @@ export const handleSignout = async () => {
     .auth()
     .signOut()
     .then(() => {
-      console.log("Signed Out");
+      alert("You have been signed out");
     })
     .catch((error) => {
       console.error(error);
