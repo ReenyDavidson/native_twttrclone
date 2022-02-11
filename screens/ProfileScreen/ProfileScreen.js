@@ -17,7 +17,7 @@ const ProfileScreen = () => {
         style={{
           fontSize: 20,
           fontFamily: "QuicksandMedium",
-          color: "#FFF",
+          color: "#FFFFFFFF",
         }}
       >
         {firebase.auth().currentUser.email}
