@@ -46,7 +46,7 @@ const Login = () => {
           style={{
             fontSize: 40,
             fontFamily: "QuicksandBold",
-            color: "#fff",
+            color: "#FFFFFFFF",
           }}
         >
           Sign in
@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
     padding: 10,
     fontSize: 18,
     fontFamily: "QuicksandBold",
-    color: "#fff",
+    color: "#FFFFFFFF",
   },
   password: {
     width: "85%",
@@ -163,7 +163,7 @@ const styles = StyleSheet.create({
     padding: 10,
     fontSize: 18,
     fontFamily: "QuicksandBold",
-    color: "#fff",
+    color: "#FFFFFFFF",
   },
 
   passwordContainer: {
@@ -193,7 +193,7 @@ const styles = StyleSheet.create({
 
   forgot: {
     fontFamily: "QuicksandBold",
-    color: "#fff",
+    color: "#FFFFFFFF",
     fontSize: 18,
   },
 

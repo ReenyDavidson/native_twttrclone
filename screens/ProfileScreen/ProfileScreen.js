@@ -34,7 +34,7 @@ const ProfileScreen = () => {
           style={{
             fontFamily: "QuicksandBold",
             fontSize: 20,
-            color: "#FFF",
+            color: "#FFFFFFFF",
           }}
         >
           sign out

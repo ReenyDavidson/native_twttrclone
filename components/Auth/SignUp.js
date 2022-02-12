@@ -62,7 +62,9 @@ const SignUp = () => {
   return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>
-        <Text style={{ fontSize: 40, fontFamily: "QuicksandBold", color: "#fff" }}>Create</Text>
+        <Text style={{ fontSize: 40, fontFamily: "QuicksandBold", color: "#FFFFFFFF" }}>
+          Create
+        </Text>
         <Image
           source={require("../../assets/images/broxnbg.png")}
           style={{
@@ -73,7 +75,9 @@ const SignUp = () => {
             transform: [{ rotate: "-10deg" }],
           }}
         />
-        <Text style={{ fontSize: 40, fontFamily: "QuicksandBold", color: "#fff" }}>account</Text>
+        <Text style={{ fontSize: 40, fontFamily: "QuicksandBold", color: "#FFFFFFFF" }}>
+          account
+        </Text>
       </View>
       <View style={styles.form}>
         <TextInput
@@ -169,7 +173,7 @@ const styles = StyleSheet.create({
     padding: 10,
     fontSize: 18,
     fontFamily: "QuicksandBold",
-    color: "#fff",
+    color: "#FFFFFFFF",
   },
   password: {
     width: "85%",
@@ -179,7 +183,7 @@ const styles = StyleSheet.create({
     padding: 10,
     fontSize: 18,
     fontFamily: "QuicksandBold",
-    color: "#fff",
+    color: "#FFFFFFFF",
   },
 
   passwordContainer: {
@@ -209,7 +213,7 @@ const styles = StyleSheet.create({
 
   register: {
     fontFamily: "QuicksandBold",
-    color: "#fff",
+    color: "#FFFFFFFF",
     fontSize: 18,
   },
   registerContainer: {
