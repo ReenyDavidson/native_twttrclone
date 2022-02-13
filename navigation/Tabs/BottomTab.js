@@ -41,7 +41,7 @@ export default function Tabs() {
           return <Ionicons name={iconName} size={size} color={color} />;
         },
         tabBarActiveTintColor: "#11DDAA",
-        tabBarInactiveTintColor: "#FFF",
+        tabBarInactiveTintColor: "#FFFFFF",
         tabBarStyle: {
           elevation: 0,
           borderTopWidth: 0.2,
