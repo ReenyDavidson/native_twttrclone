@@ -20,7 +20,6 @@ export default function Tabs() {
       screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, size, color }) => {
           let iconName;
-
           if (route.name === "TabOneScreen") {
             iconName = focused ? "home" : "home-outline";
           } else if (route.name === "TabTwoScreen") {
@@ -124,7 +123,7 @@ export default function Tabs() {
           headerTitleStyle: {
             fontFamily: "QuicksandSemiBold",
             fontSize: 24,
-            color: "#FFF",
+            color: "#FFFFFF",
           },
         }}
       />

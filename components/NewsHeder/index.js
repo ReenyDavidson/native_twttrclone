@@ -163,7 +163,7 @@ const NewsHeader = () => {
       <Pressable style={styles.eachHeader} onPress={() => navigation.navigate("TravelNewsScreen")}>
         <View style={styles.header}>
           <Text style={styles.headerText}>Travel</Text>
-          <Entypo name={"aircraft"} size={10} color={"#FFF"} />
+          <Entypo name={"aircraft"} size={10} color={"#FFFFFF"} />
         </View>
         <NewsHeaderImage
           image={
@@ -186,7 +186,7 @@ const styles = StyleSheet.create({
     width: "100%",
     backgroundColor: "#001",
   },
-  stickyHeaderText: { color: "#fff", fontSize: 25, top: 30, fontFamily: "QuicksandBold" },
+  stickyHeaderText: { color: "#FFFFFF", fontSize: 25, top: 30, fontFamily: "QuicksandBold" },
   eachHeader: {
     flexDirection: "row",
     justifyContent: "space-between",
@@ -198,7 +198,7 @@ const styles = StyleSheet.create({
     fontSize: 17,
     fontFamily: "QuicksandSemiBold",
     padding: 15,
-    color: "#FFF",
+    color: "#FFFFFF",
   },
   header: {
     flexDirection: "row",
