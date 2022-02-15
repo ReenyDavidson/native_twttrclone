@@ -135,7 +135,11 @@ const NewsHeader = () => {
       <Pressable style={styles.eachHeader} onPress={() => navigation.navigate("FashionNewsScreen")}>
         <View style={styles.header}>
           <Text style={styles.headerText}>Fashion</Text>
-          <FontAwesome name={"shopping-bag"} size={10} color={"#FFF"} />
+          <FontAwesome
+            name={"shopping-bag"}
+            size={10}
+            color={<Entypo name={"aircraft"} size={10} color={"#FFFFFF"} />}
+          />
         </View>
         <NewsHeaderImage
           image={
@@ -149,7 +153,11 @@ const NewsHeader = () => {
       <Pressable style={styles.eachHeader} onPress={() => navigation.navigate("CarsNewsScreen")}>
         <View style={styles.header}>
           <Text style={styles.headerText}>Cars</Text>
-          <Ionicons name={"car-sport-outline"} size={10} color={"#FFF"} />
+          <Ionicons
+            name={"car-sport-outline"}
+            size={10}
+            color={<Entypo name={"aircraft"} size={10} color={"#FFFFFF"} />}
+          />
         </View>
         <NewsHeaderImage
           image={
